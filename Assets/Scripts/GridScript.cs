@@ -53,7 +53,7 @@ public class GridScript : MonoBehaviour
             {
                 if (erasing)
                 {
-                    if (hit.collider.tag == "WoodCube")
+                    if (hit.collider.tag != "OverlayCube")
                     {
                         Destroy(hit.collider.gameObject);
                     }
@@ -62,7 +62,12 @@ public class GridScript : MonoBehaviour
                 {
                     if (hit.collider.tag == "OverlayCube")
                     {
-                        hit.collider.GetComponent<CubeScript>().ChangeCube();
+                        hit.collider.GetComponent<CubeScript>().SpawnCube();
+                    }
+                    else
+                    {
+                        hit.collider.GetComponent<CubeScript>().SpawnCube();
+                        Destroy(hit.collider.gameObject);
                     }
                 }
             }

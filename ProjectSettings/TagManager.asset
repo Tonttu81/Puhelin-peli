@@ -8,6 +8,8 @@ TagManager:
   - OverlayCube
   - Grid
   - Circle
+  - CubeSelector
+  - StoneCube
   layers:
   - Default
   - TransparentFX

@@ -6,15 +6,19 @@ public class CubeScript : MonoBehaviour
 {
     GridScript gridScript;
 
+    CubeSelector cubeSelector;
+
+    GameObject currentCube;
+
     public Rigidbody2D rb2D;
 
-    public GameObject woodCubePrefab;
-    public GameObject gridOverlayPrefab;
+    public GameObject brokenWoodCube;
 
     // Start is called before the first frame update
     void Start()
     {
         gridScript = GameObject.FindGameObjectWithTag("Grid").GetComponent<GridScript>();
+        cubeSelector = GameObject.FindGameObjectWithTag("CubeSelector").GetComponent<CubeSelector>();
     }
 
     // Update is called once per frame
@@ -32,9 +36,17 @@ public class CubeScript : MonoBehaviour
             }
         }
     }
-
-    public void ChangeCube()
+    public void SpawnCube()
     {
-        Instantiate(woodCubePrefab, new Vector3(transform.position.x, transform.position.y, -1f), Quaternion.identity);
+        Instantiate(cubeSelector.currentCube, new Vector3(transform.position.x, transform.position.y, -1f), Quaternion.identity);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Circle")
+        {
+            Instantiate(brokenWoodCube, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
     }
 }

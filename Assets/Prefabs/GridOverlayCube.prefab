@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f957dff8a3157684284bc51de02884b8, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 36b2af8f7d7ca3d43a84838a6074204e, type: 3}
+  m_Color: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 0.40392157}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,9 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cbd354890807a4ba009a82c7189a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  woodCubePrefab: {fileID: 2908901051210412919, guid: 55d8dec891d2e484e9578b002f277ab4,
-    type: 3}
-  gridOverlayPrefab: {fileID: 127385090543506385}
+  rb2D: {fileID: 0}
+  brokenWoodCube: {fileID: 0}
 --- !u!61 &6233537627650171371
 BoxCollider2D:
   m_ObjectHideFlags: 0
