@@ -6,6 +6,8 @@ TagManager:
   tags:
   - WoodCube
   - OverlayCube
+  - Grid
+  - Circle
   layers:
   - Default
   - TransparentFX

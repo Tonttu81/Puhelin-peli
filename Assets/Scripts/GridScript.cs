@@ -6,11 +6,12 @@ public class GridScript : MonoBehaviour
 {
     public bool erasing = false;
 
+    public bool playing;
+
     int lapX = 0;
     int lapY = 0;
 
     public int gridWidth;
-
 
     public LayerMask cubeLayer;
 
@@ -20,7 +21,7 @@ public class GridScript : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {   
+    {
         for (int i = 0; i < gridCubePositions.Length; i++)
         {
             if (lapX % gridWidth == 0)
@@ -66,5 +67,11 @@ public class GridScript : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void Play()
+    {
+        playing = true;
+        gameObject.SetActive(false);
     }
 }
