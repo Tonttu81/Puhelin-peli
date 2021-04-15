@@ -57,8 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\GridScript.cs" />
-    <Compile Include="Assets\Scripts\CubeScript.cs" />
     <Compile Include="Assets\TestiScripti.cs" />
+    <Compile Include="Assets\Scripts\CubeScript.cs" />
+    <Compile Include="Assets\Scripts\MainMenu.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
