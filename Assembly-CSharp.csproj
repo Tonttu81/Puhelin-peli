@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\CannonScript.cs" />
     <Compile Include="Assets\CubeSelector.cs" />
     <Compile Include="Assets\Scripts\TempBACKSRCipt.cs" />
     <Compile Include="Assets\Scripts\GridScript.cs" />

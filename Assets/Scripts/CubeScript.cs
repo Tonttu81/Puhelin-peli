@@ -12,7 +12,7 @@ public class CubeScript : MonoBehaviour
 
     public Rigidbody2D rb2D;
 
-    public GameObject brokenWoodCube;
+    public GameObject brokenCube;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +45,7 @@ public class CubeScript : MonoBehaviour
     {
         if (collision.tag == "Circle")
         {
-            Instantiate(brokenWoodCube, transform.position, transform.rotation);
+            Instantiate(brokenCube, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

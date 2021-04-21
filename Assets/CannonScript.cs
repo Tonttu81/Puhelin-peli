@@ -8,22 +8,27 @@ public class CannonScript : MonoBehaviour
 
     float timer = 3;
 
+    GridScript gridScript;
+
     public GameObject bulletPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gridScript = GameObject.FindGameObjectWithTag("Grid").GetComponent<GridScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer -= 1 * Time.deltaTime;
-        if (timer < 0)
+        if (gridScript.playing)
         {
-            timer = 3;
-            Shoot();
+            timer -= 1 * Time.deltaTime;
+            if (timer < 0)
+            {
+                timer = 3;
+                Shoot();
+            }
         }
     }
 
