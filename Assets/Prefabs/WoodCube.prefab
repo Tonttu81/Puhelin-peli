@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb2D: {fileID: -8779016002201030318}
-  brokenWoodCube: {fileID: 1257005983160545964, guid: ef7abef45dc59b343906dc075c102680,
+  brokenWoodCube: {fileID: 6443856928187222789, guid: ca5fe003f66d968429bfb8d485e48fe6,
     type: 3}
 --- !u!50 &-8779016002201030318
 Rigidbody2D:
