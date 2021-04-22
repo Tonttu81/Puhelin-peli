@@ -98,7 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cbd354890807a4ba009a82c7189a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 200
+  explosionForce: 0
   rb2D: {fileID: 7777276428763686869}
+  cubeMask:
+    serializedVersion: 2
+    m_Bits: 0
   brokenCube: {fileID: 5501969610642575989, guid: a378b2a03babb6149812b1bbabbeacd4,
     type: 3}
 --- !u!50 &7777276428763686869
