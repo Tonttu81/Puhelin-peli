@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\GridScript.cs" />
     <Compile Include="Assets\Scripts\TestiScripti.cs" />
     <Compile Include="Assets\Scripts\CubeScript.cs" />
+    <Compile Include="Assets\Scripts\Parallax.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
