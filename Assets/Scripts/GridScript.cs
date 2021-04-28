@@ -32,6 +32,7 @@ public class GridScript : MonoBehaviour
 
             gridCubePositions[i].x = lapX;
             gridCubePositions[i].y = lapY;
+            gridCubePositions[i].z = 0;
 
             GameObject cube = Instantiate(gridCubePrefab, gridCubePositions[i], Quaternion.identity, transform);
             cube.transform.localPosition = gridCubePositions[i];

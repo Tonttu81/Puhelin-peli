@@ -20,6 +20,8 @@ public class CubeScript : MonoBehaviour
 
     public GameObject brokenCube;
 
+    public GameObject Explosion;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +58,8 @@ public class CubeScript : MonoBehaviour
                     break;
                 case "TntCube":
                     Explode();
+                    Instantiate(Explosion, transform.position, transform.rotation);
+                    Destroy(gameObject);
                     break;
             }
         }

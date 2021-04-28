@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: 36b2af8f7d7ca3d43a84838a6074204e, type: 3}
   m_Color: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 0.40392157}
   m_FlipX: 0
@@ -96,8 +96,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cbd354890807a4ba009a82c7189a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 0
+  explosionForce: 0
   rb2D: {fileID: 0}
-  brokenWoodCube: {fileID: 0}
+  cubeMask:
+    serializedVersion: 2
+    m_Bits: 0
+  brokenCube: {fileID: 0}
 --- !u!61 &6233537627650171371
 BoxCollider2D:
   m_ObjectHideFlags: 0
