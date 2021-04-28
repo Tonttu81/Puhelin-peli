@@ -98,8 +98,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cbd354890807a4ba009a82c7189a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 100
+  explosionForce: 0
   rb2D: {fileID: -8779016002201030318}
-  brokenWoodCube: {fileID: 6443856928187222789, guid: ca5fe003f66d968429bfb8d485e48fe6,
+  cubeMask:
+    serializedVersion: 2
+    m_Bits: 0
+  brokenCube: {fileID: 6443856928187222789, guid: ca5fe003f66d968429bfb8d485e48fe6,
     type: 3}
 --- !u!50 &-8779016002201030318
 Rigidbody2D:

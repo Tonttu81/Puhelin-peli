@@ -10,6 +10,8 @@ TagManager:
   - Circle
   - CubeSelector
   - StoneCube
+  - TntCube
+  - Ground
   layers:
   - Default
   - TransparentFX
