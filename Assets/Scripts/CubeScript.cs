@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CubeScript : MonoBehaviour
 {
+    public string cubeType;
+    public bool occupied;
+
     public float hp;
 
     public float explosionForce;
@@ -41,6 +44,23 @@ public class CubeScript : MonoBehaviour
             else
             {
                 rb2D.isKinematic = true;
+            }
+        }
+        else
+        {
+            RaycastHit2D gridCheck = Physics2D.Raycast(transform.position, new Vector3(0f, 0f, -2f), 20f);
+            if (gridCheck.collider.gameObject != null)
+            {
+                if (gridCheck.collider.tag != "OverlayCube")
+                {
+                    occupied = true;
+                    cubeType = gridCheck.collider.tag;
+                }
+                else if (gridCheck.collider.tag == "OverlayCube")
+                {
+                    occupied = false;
+                    cubeType = null;
+                }
             }
         }
 

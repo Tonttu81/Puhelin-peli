@@ -661,9 +661,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 228857701}
-        m_TargetAssemblyTypeName: Reset, Assembly-CSharp
-        m_MethodName: Retry
+      - m_Target: {fileID: 1626633473}
+        m_TargetAssemblyTypeName: GridScript, Assembly-CSharp
+        m_MethodName: Reload
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3694,6 +3694,11 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
+  cubes: []
+  woodCubePrefab: {fileID: 2908901051210412919, guid: 55d8dec891d2e484e9578b002f277ab4,
+    type: 3}
+  stoneCubePrefab: {fileID: 7777276428763686872, guid: 3c26ea3d10ca84142a709def5c66ef38,
+    type: 3}
 --- !u!4 &1626633474
 Transform:
   m_ObjectHideFlags: 0

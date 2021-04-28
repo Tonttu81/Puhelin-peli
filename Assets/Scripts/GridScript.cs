@@ -19,6 +19,12 @@ public class GridScript : MonoBehaviour
 
     public Vector3[] gridCubePositions;
 
+    CubeScript[] cubeScripts;
+    public GameObject[] cubes;
+
+    public GameObject woodCubePrefab;
+    public GameObject stoneCubePrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +45,9 @@ public class GridScript : MonoBehaviour
 
             lapX++;
         }
+
+        cubeScripts = GetComponentsInChildren<CubeScript>();
+        cubes = new GameObject[cubeScripts.Length];
     }
 
     // Update is called once per frame
@@ -77,7 +86,30 @@ public class GridScript : MonoBehaviour
 
     public void Play()
     {
+        for (int i = 0; i < cubeScripts.Length; i++)
+        {
+            if (cubeScripts[i].occupied)
+            {
+                cubes[i] = cubeScripts[i].gameObject;
+            }
+        }
+
         playing = true;
         gameObject.SetActive(false);
+    }
+
+    public void Reload()
+    {
+        playing = false;
+        gameObject.SetActive(true);
+
+
+        for (int i = 0; i < cubes.Length; i++)
+        {
+            if (cubes[i] != null)
+            {
+                Instantiate(woodCubePrefab, new Vector3(cubes[i].transform.position.x, cubes[i].transform.position.y, -1f), Quaternion.identity);
+            }
+        }
     }
 }
