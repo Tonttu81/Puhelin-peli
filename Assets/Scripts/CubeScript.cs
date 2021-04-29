@@ -17,6 +17,7 @@ public struct Cube
 
 public class CubeScript : MonoBehaviour
 {
+    Vector3[] dirs = { new Vector2(1, 0), new Vector2(-1, 0), new Vector2(0, 1), new Vector2(0, -1) };
     //public string cubeType;
     //public bool occupied;
 
@@ -25,6 +26,8 @@ public class CubeScript : MonoBehaviour
     public float hp;
 
     public float explosionForce;
+
+    
 
     GridScript gridScript;
 
@@ -82,6 +85,30 @@ public class CubeScript : MonoBehaviour
                 }
             }
         }
+
+        if (!gridScript.playing)
+        {
+            if (gameObject.tag != "OverlayCube")
+            {
+                for (int i = 0; i < dirs.Length; i++)
+                {
+                    RaycastHit2D nextTo = Physics2D.Raycast(transform.position + dirs[i], dirs[i], 0.1f);
+                    Debug.DrawRay(transform.position + dirs[i], dirs[i] * 0.1f, Color.red);
+                    if (nextTo.collider)
+                    {
+                        if (nextTo.collider.tag != "OverlayCube")
+                        {
+
+                            // next time
+                            //FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
+                            //joint.connectedBody = nextTo.collider.GetComponent<Rigidbody2D>();
+                        }
+                    }
+                }
+            }
+        }
+        
+        
 
         if (hp <= 0)
         {
