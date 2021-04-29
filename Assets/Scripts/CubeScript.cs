@@ -161,7 +161,7 @@ public class CubeScript : MonoBehaviour
 
     void Explode()
     {
-        CameraShake.Instance.ShakeCamera(1, 0.5f);
+        CameraShake.Instance.ShakeCamera(0.2f, 0.35f);
         RaycastHit2D[] hit = Physics2D.CircleCastAll(transform.position, 10f, Vector2.zero, 0f, cubeMask);
         for (int i = 0; i < hit.Length; i++)
         {
