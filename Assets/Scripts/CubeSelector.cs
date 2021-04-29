@@ -43,6 +43,7 @@ public class CubeSelector : MonoBehaviour
         currentCube = metalCubePrefab;
         gridScript.erasing = false;
     }
+
     public void TnTCube()
     {
         currentCube = TntCubePrefab;

@@ -1174,9 +1174,9 @@ RectTransform:
   m_Father: {fileID: 232510205}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 56.2, y: 113}
+  m_AnchorMin: {x: 0.5, y: 0.3751928}
+  m_AnchorMax: {x: 0.5, y: 0.3751928}
+  m_AnchoredPosition: {x: 0.37599945, y: 0.6000061}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &356960053
@@ -1994,6 +1994,7 @@ GameObject:
   - component: {fileID: 901244576}
   - component: {fileID: 901244575}
   - component: {fileID: 901244574}
+  - component: {fileID: 901244578}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2084,6 +2085,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &901244578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901244573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b42586ce914676d4ab3546b9732f6e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridScript: {fileID: 1626633473}
+  playButton: {fileID: 2106638105}
+  retryButton: {fileID: 228857696}
 --- !u!1 &922903631
 GameObject:
   m_ObjectHideFlags: 0
@@ -2732,9 +2748,9 @@ RectTransform:
   m_Father: {fileID: 232510205}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 19.017998, y: 11.000036}
+  m_AnchorMin: {x: 0.5, y: 0.8721928}
+  m_AnchorMax: {x: 0.5, y: 0.8721928}
+  m_AnchoredPosition: {x: -37.124, y: 3.4000244}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1158441444
@@ -3533,9 +3549,9 @@ RectTransform:
   m_Father: {fileID: 232510205}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 56.2, y: -96.109764}
+  m_AnchorMin: {x: 0.5, y: 0.63380724}
+  m_AnchorMax: {x: 0.5, y: 0.63380724}
+  m_AnchoredPosition: {x: 0.375, y: 1}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1588940012
@@ -3834,6 +3850,8 @@ MonoBehaviour:
   woodCubePrefab: {fileID: 2908901051210412919, guid: 55d8dec891d2e484e9578b002f277ab4,
     type: 3}
   stoneCubePrefab: {fileID: 7777276428763686872, guid: 3c26ea3d10ca84142a709def5c66ef38,
+    type: 3}
+  tntCubePrefab: {fileID: 3247531602955499636, guid: 8a8b9ab1f37e65545a0d9e3162c647c8,
     type: 3}
 --- !u!4 &1626633474
 Transform:
@@ -4528,9 +4546,9 @@ RectTransform:
   m_Father: {fileID: 232510205}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -13.539978, y: 31}
+  m_AnchorMin: {x: 0.5, y: 0.13000001}
+  m_AnchorMax: {x: 0.5, y: 0.13000001}
+  m_AnchoredPosition: {x: 42.460022, y: -41}
   m_SizeDelta: {x: 85.6717, y: 85.67169}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &2092241902

@@ -24,6 +24,7 @@ public class GridScript : MonoBehaviour
 
     public GameObject woodCubePrefab;
     public GameObject stoneCubePrefab;
+    public GameObject tntCubePrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -88,7 +89,8 @@ public class GridScript : MonoBehaviour
     {
         for (int i = 0; i < cubeScripts.Length; i++)
         {
-            if (cubeScripts[i].occupied)
+            print(cubeScripts[i].status.occupied);
+            if (cubeScripts[i].status.occupied) // tää 
             {
                 cubes[i] = cubeScripts[i].gameObject;
             }
@@ -100,6 +102,24 @@ public class GridScript : MonoBehaviour
 
     public void Reload()
     {
+        CubeScript[] oldCubes = GameObject.FindObjectsOfType<CubeScript>();
+        for (int i = 0; i < oldCubes.Length; i++)
+        {
+            Destroy(oldCubes[i].gameObject);
+        }
+
+        GameObject[] rubble = GameObject.FindGameObjectsWithTag("Rubble");
+        for (int i = 0; i < rubble.Length; i++)
+        {
+            Destroy(rubble[i]);
+        }
+
+        GameObject[] projectiles = GameObject.FindGameObjectsWithTag("Circle");
+        for (int i = 0; i < projectiles.Length; i++)
+        {
+            Destroy(projectiles[i]);
+        }
+
         playing = false;
         gameObject.SetActive(true);
 
@@ -108,7 +128,18 @@ public class GridScript : MonoBehaviour
         {
             if (cubes[i] != null)
             {
-                Instantiate(woodCubePrefab, new Vector3(cubes[i].transform.position.x, cubes[i].transform.position.y, -1f), Quaternion.identity);
+                switch (cubeScripts[i].status.cubeType)
+                {
+                    case "WoodCube":
+                        Instantiate(woodCubePrefab, new Vector3(cubes[i].transform.position.x, cubes[i].transform.position.y, -1f), Quaternion.identity);
+                        break;
+                    case "StoneCube":
+                        Instantiate(stoneCubePrefab, new Vector3(cubes[i].transform.position.x, cubes[i].transform.position.y, -1f), Quaternion.identity);
+                        break;
+                    case "TntCube":
+                        Instantiate(tntCubePrefab, new Vector3(cubes[i].transform.position.x, cubes[i].transform.position.y, -1f), Quaternion.identity);
+                        break;
+                }
             }
         }
     }

@@ -2,10 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CubeScript : MonoBehaviour
+public struct Cube
 {
     public string cubeType;
     public bool occupied;
+
+
+    public Cube(string _cubeType, bool _occupied)
+    {
+        cubeType = _cubeType;
+        occupied = _occupied;
+    }
+}
+
+public class CubeScript : MonoBehaviour
+{
+    //public string cubeType;
+    //public bool occupied;
+
+    public Cube status; // <<<
 
     public float hp;
 
@@ -53,13 +68,17 @@ public class CubeScript : MonoBehaviour
             {
                 if (gridCheck.collider.tag != "OverlayCube")
                 {
-                    occupied = true;
-                    cubeType = gridCheck.collider.tag;
+                    //occupied = true;
+                    //cubeType = gridCheck.collider.tag;
+
+                    status = new Cube(gridCheck.collider.tag, true); 
                 }
                 else if (gridCheck.collider.tag == "OverlayCube")
                 {
-                    occupied = false;
-                    cubeType = null;
+                    //occupied = false;
+                    //cubeType = null;
+
+                    status = new Cube("", false); 
                 }
             }
         }
@@ -91,6 +110,7 @@ public class CubeScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // Aika huonosti tehty mutta toimii kait lkdsalkjdlkj
         Vector2 vel;
         if (collision.tag != "Ground")
         {

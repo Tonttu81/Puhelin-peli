@@ -12,6 +12,7 @@ TagManager:
   - StoneCube
   - TntCube
   - Ground
+  - Rubble
   layers:
   - Default
   - TransparentFX
