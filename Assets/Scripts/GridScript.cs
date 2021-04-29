@@ -89,7 +89,6 @@ public class GridScript : MonoBehaviour
     {
         for (int i = 0; i < cubeScripts.Length; i++)
         {
-            print(cubeScripts[i].status.occupied);
             if (cubeScripts[i].status.occupied) // tää 
             {
                 cubes[i] = cubeScripts[i].gameObject;

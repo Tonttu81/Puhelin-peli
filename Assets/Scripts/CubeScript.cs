@@ -111,52 +111,66 @@ public class CubeScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // Aika huonosti tehty mutta toimii kait lkdsalkjdlkj
-        Vector2 vel;
-        if (collision.tag != "Ground")
+        
+        if (collision.tag != "OverlayCube")
         {
-            vel = collision.GetComponent<Rigidbody2D>().velocity;
-        }
-        else
-        {
-            vel = new Vector2(0f, 0f);
-        }
+            Vector2 vel;
 
-        if (vel.x == 0 && vel.y == 0)
-        {
-            vel = rb2D.velocity;
-        }
+            if (collision.tag != "Ground")
+            {
+                vel = collision.GetComponent<Rigidbody2D>().velocity;
+            }
+            else
+            {
+                vel = new Vector2(0f, 0f);
+            }
 
-        float x;
-        float y;
+            if (vel.x == 0 && vel.y == 0)
+            {
+                if (gameObject.tag != "OverlayCube")
+                {
+                    vel = rb2D.velocity;
+                }
+                
+            }
 
-        if (vel.x < 0)
-        {
-            x = -vel.x;
-        }
-        else
-        {
-            x = vel.x;
-        }
-        if (vel.y < 0)
-        {
-            y = -vel.y;
-        }
-        else
-        {
-            y = vel.y;
-        }
+            float x;
+            float y;
+
+            if (vel.x < 0)
+            {
+                x = -vel.x;
+            }
+            else
+            {
+                x = vel.x;
+            }
+            if (vel.y < 0)
+            {
+                y = -vel.y;
+            }
+            else
+            {
+                y = vel.y;
+            }
 
 
-        hp -= (x + y) / 2;
+            hp -= (x + y) / 2;
+        }
     }
 
     void Explode()
     {
+        CameraShake.Instance.ShakeCamera(1, 0.5f);
         RaycastHit2D[] hit = Physics2D.CircleCastAll(transform.position, 10f, Vector2.zero, 0f, cubeMask);
         for (int i = 0; i < hit.Length; i++)
         {
             if (hit[i].collider != null)
             {
+                if (hit[i].distance < 2)
+                {
+                    hit[i].collider.GetComponent<CubeScript>().hp -= 100;
+                }
                 Vector2 dir = (hit[i].collider.transform.position - transform.position);
                 hit[i].collider.GetComponent<Rigidbody2D>().AddForce(dir * explosionForce, ForceMode2D.Impulse);
             }

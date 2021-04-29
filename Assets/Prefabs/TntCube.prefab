@@ -99,13 +99,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1
-  explosionForce: 10
+  explosionForce: 22.4852
   rb2D: {fileID: 3247531602955499635}
   cubeMask:
     serializedVersion: 2
     m_Bits: 64
   brokenCube: {fileID: 0}
-  Explosion: {fileID: 0}
+  Explosion: {fileID: 3741262062832226594, guid: 6cbe96e8429d16e4eb23d4c37897b3d5,
+    type: 3}
 --- !u!50 &3247531602955499635
 Rigidbody2D:
   serializedVersion: 4

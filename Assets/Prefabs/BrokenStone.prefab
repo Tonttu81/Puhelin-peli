@@ -566,16 +566,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8588458509186531501}
     m_Modifications:
-    - target: {fileID: 1456539812971837725, guid: 03480db0d5d4f3b439f1dc06b7bdecb8,
-        type: 3}
-      propertyPath: InitialModule.gravityModifier.scalar
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1456539812971837725, guid: 03480db0d5d4f3b439f1dc06b7bdecb8,
-        type: 3}
-      propertyPath: InitialModule.gravityModifier.minScalar
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3422311017084397061, guid: 03480db0d5d4f3b439f1dc06b7bdecb8,
         type: 3}
       propertyPath: m_RootOrder
@@ -636,11 +626,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Particle System (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 8442404393084578366, guid: 03480db0d5d4f3b439f1dc06b7bdecb8,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 414e1ff54e1791f43b0eea4a836db5ea, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03480db0d5d4f3b439f1dc06b7bdecb8, type: 3}
 --- !u!4 &595450131222012879 stripped
