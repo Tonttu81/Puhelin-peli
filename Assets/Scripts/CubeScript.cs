@@ -86,30 +86,6 @@ public class CubeScript : MonoBehaviour
             }
         }
 
-        if (!gridScript.playing)
-        {
-            if (gameObject.tag != "OverlayCube")
-            {
-                for (int i = 0; i < dirs.Length; i++)
-                {
-                    RaycastHit2D nextTo = Physics2D.Raycast(transform.position + dirs[i], dirs[i], 0.1f);
-                    Debug.DrawRay(transform.position + dirs[i], dirs[i] * 0.1f, Color.red);
-                    if (nextTo.collider)
-                    {
-                        if (nextTo.collider.tag != "OverlayCube")
-                        {
-
-                            // next time
-                            //FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
-                            //joint.connectedBody = nextTo.collider.GetComponent<Rigidbody2D>();
-                        }
-                    }
-                }
-            }
-        }
-        
-        
-
         if (hp <= 0)
         {
             switch (gameObject.tag)
@@ -129,6 +105,16 @@ public class CubeScript : MonoBehaviour
                     break;
             }
         }
+
+        // hajottaa kaikki ylim‰‰r‰set jointit
+        FixedJoint2D[] extraJoints = GetComponents<FixedJoint2D>();
+        for (int i = 0; i < extraJoints.Length; i++)
+        {
+            if (extraJoints[i].connectedBody == null)
+            {
+                Destroy(extraJoints[i]);
+            }
+        }
     }
     public void SpawnCube()
     {
@@ -141,6 +127,43 @@ public class CubeScript : MonoBehaviour
         
         if (collision.tag != "OverlayCube")
         {
+            //dadaadad
+            if (gameObject.tag != "OverlayCube")
+            {
+                if (!gridScript.playing)
+                {
+                    if (AngleCheck(collision.transform))
+                    {
+                        FixedJoint2D[] existingJoints = GetComponents<FixedJoint2D>(); // Ottaa kaikki objektin jointit
+                        bool[] test = new bool[existingJoints.Length]; // tekee bool arrayn
+
+                        if (existingJoints.Length > 0) // tarkistaa onko jointteja yht‰‰n
+                        {
+                            for (int j = 0; j < existingJoints.Length; j++) // jos on jointteja, k‰y ne kaikki l‰pi
+                            {
+                                if (existingJoints[j].connectedBody != collision.GetComponent<Rigidbody2D>()) // ja katsoo, onko jointin connectedbody sen objektin rigidbody, joka tuli triggeriin
+                                {
+                                    test[j] = false; // jos on, laittaa bool arrayn yhdeksi valueksi false
+                                }
+                            }
+
+                            if (!ArrayCheck(test)) // k‰y kaikki bool arrayn valuet l‰pi, ja jos kaikki valuet on false niin tekee uuden jointin
+                            {
+                                FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
+                                joint.connectedBody = collision.GetComponent<Rigidbody2D>();
+                            }
+
+                        }
+                        else // jos jointteja ei ole, tekee jointin
+                        {
+                            FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
+                            joint.connectedBody = collision.GetComponent<Rigidbody2D>();
+                        }
+                    }
+                }
+            }
+            
+
             Vector2 vel;
 
             if (collision.tag != "Ground")
@@ -184,6 +207,41 @@ public class CubeScript : MonoBehaviour
 
             hp -= (x + y) / 2;
         }
+    }
+
+    bool ArrayCheck(bool[] array)
+    {
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] == true)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    bool AngleCheck(Transform pos)
+    {
+        // lol se toimii
+        Vector2 dir = pos.position - transform.position;
+        if (dir == Vector2.down)
+        {
+            return true;
+        }
+        else if (dir == Vector2.up)
+        {
+            return true;
+        }
+        else if (dir == Vector2.left)
+        {
+            return true;
+        }
+        else if (dir == Vector2.right)
+        {
+            return true;
+        }
+        return false;
     }
 
     void Explode()

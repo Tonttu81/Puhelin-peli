@@ -61,15 +61,15 @@
     <Compile Include="Assets\Scripts\Debris.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\CannonScript.cs" />
+    <Compile Include="Assets\Scripts\ParticleRemover.cs" />
     <Compile Include="Assets\Scripts\CubeSelector.cs" />
     <Compile Include="Assets\Scripts\Reset.cs" />
     <Compile Include="Assets\Scripts\TempBACKSRCipt.cs" />
     <Compile Include="Assets\Scripts\GridScript.cs" />
     <Compile Include="Assets\Scripts\Parallax.cs" />
+    <Compile Include="Assets\CameraShake.cs" />
     <Compile Include="Assets\Scripts\TestiScripti.cs" />
     <Compile Include="Assets\Scripts\CubeScript.cs" />
-    <Compile Include="Assets\CameraShake.cs" />
-    <Compile Include="Assets\Scripts\ParticleRemover.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -733,6 +733,12 @@
     <Reference Include="Unity.ShaderGraph.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
@@ -774,12 +780,6 @@
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
       <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>Library\ScriptAssemblies\Cinemachine.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
