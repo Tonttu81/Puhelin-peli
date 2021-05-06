@@ -68,8 +68,8 @@
     <Compile Include="Assets\Scripts\Parallax.cs" />
     <Compile Include="Assets\CameraShake.cs" />
     <Compile Include="Assets\Scripts\TestiScripti.cs" />
-    <Compile Include="Assets\Scripts\CubeScript.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
+    <Compile Include="Assets\Scripts\CubeScript.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
