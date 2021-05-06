@@ -13,6 +13,7 @@ TagManager:
   - TntCube
   - Ground
   - Rubble
+  - WoodenPlanks
   layers:
   - Default
   - TransparentFX
