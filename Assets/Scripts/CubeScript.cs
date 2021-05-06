@@ -162,8 +162,21 @@ public class CubeScript : MonoBehaviour
                             else // jos jointteja ei ole, tekee jointin
                             {
                                 FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
+                                joint.breakForce = 500f;
+                                joint.breakTorque = 500f;
                                 joint.connectedBody = collision.GetComponent<Rigidbody2D>();
                             }
+<<<<<<< HEAD
+=======
+
+                        }
+                        else // jos jointteja ei ole, tekee jointin
+                        {
+                            FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
+                            joint.breakForce = 500f;
+                            joint.breakTorque = 500f;
+                            joint.connectedBody = collision.GetComponent<Rigidbody2D>();
+>>>>>>> a8e98fa20681a4bd9b9f2f790adac552a1d97249
                         }
                     }
                 }
