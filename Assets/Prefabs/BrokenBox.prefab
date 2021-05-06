@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8327918357016891247}
   m_Layer: 0
   m_Name: Particle System (1)
-  m_TagString: Untagged
+  m_TagString: Rubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4890,7 +4890,7 @@ GameObject:
   - component: {fileID: 7366675524560308805}
   m_Layer: 6
   m_Name: BrokenBox2 (3)
-  m_TagString: Untagged
+  m_TagString: Rubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5022,7 +5022,7 @@ GameObject:
   - component: {fileID: 846683705359466791}
   m_Layer: 0
   m_Name: Particle System (1)
-  m_TagString: Untagged
+  m_TagString: Rubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9898,7 +9898,7 @@ GameObject:
   - component: {fileID: 5760089484498775656}
   m_Layer: 0
   m_Name: Particle System (2)
-  m_TagString: Untagged
+  m_TagString: Rubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14811,7 +14811,7 @@ GameObject:
   - component: {fileID: 6443856928436290990}
   m_Layer: 6
   m_Name: BrokenBox2
-  m_TagString: Untagged
+  m_TagString: Rubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14943,7 +14943,7 @@ GameObject:
   - component: {fileID: 6443856929018552333}
   m_Layer: 6
   m_Name: BrokenBox (1)
-  m_TagString: Untagged
+  m_TagString: Rubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15075,7 +15075,7 @@ GameObject:
   - component: {fileID: 6443856929251896315}
   m_Layer: 6
   m_Name: BrokenBox
-  m_TagString: Untagged
+  m_TagString: Rubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15207,7 +15207,7 @@ GameObject:
   - component: {fileID: 6308259397047245456}
   m_Layer: 0
   m_Name: Particle System
-  m_TagString: Untagged
+  m_TagString: Rubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20083,7 +20083,7 @@ GameObject:
   - component: {fileID: 9106593752367589543}
   m_Layer: 6
   m_Name: BrokenBox2 (1)
-  m_TagString: Untagged
+  m_TagString: Rubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -20215,7 +20215,7 @@ GameObject:
   - component: {fileID: 8098176410567762729}
   m_Layer: 0
   m_Name: Particle System (1)
-  m_TagString: Untagged
+  m_TagString: Rubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25091,7 +25091,7 @@ GameObject:
   - component: {fileID: 5459117798630952375}
   m_Layer: 6
   m_Name: BrokenBox2 (2)
-  m_TagString: Untagged
+  m_TagString: Rubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25223,7 +25223,7 @@ GameObject:
   - component: {fileID: 9123627746983584461}
   m_Layer: 0
   m_Name: Particle System (1)
-  m_TagString: Untagged
+  m_TagString: Rubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30099,7 +30099,7 @@ GameObject:
   - component: {fileID: 420957674504769806}
   m_Layer: 0
   m_Name: Particle System (2)
-  m_TagString: Untagged
+  m_TagString: Rubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

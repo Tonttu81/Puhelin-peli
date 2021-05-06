@@ -55,13 +55,16 @@ public class CubeScript : MonoBehaviour
     {
         if (gameObject.tag != "OverlayCube")
         {
-            if (gridScript.playing)
+            if (gridScript)
             {
-                rb2D.isKinematic = false;
-            }
-            else
-            {
-                rb2D.isKinematic = true;
+                if (gridScript.playing)
+                {
+                    rb2D.isKinematic = false;
+                }
+                else
+                {
+                    rb2D.isKinematic = true;
+                }
             }
         }
         else
@@ -130,34 +133,37 @@ public class CubeScript : MonoBehaviour
             //dadaadad
             if (gameObject.tag != "OverlayCube")
             {
-                if (!gridScript.playing)
+                if (gridScript)
                 {
-                    if (AngleCheck(collision.transform))
+                    if (!gridScript.playing)
                     {
-                        FixedJoint2D[] existingJoints = GetComponents<FixedJoint2D>(); // Ottaa kaikki objektin jointit
-                        bool[] test = new bool[existingJoints.Length]; // tekee bool arrayn
-
-                        if (existingJoints.Length > 0) // tarkistaa onko jointteja yht‰‰n
+                        if (AngleCheck(collision.transform))
                         {
-                            for (int j = 0; j < existingJoints.Length; j++) // jos on jointteja, k‰y ne kaikki l‰pi
-                            {
-                                if (existingJoints[j].connectedBody != collision.GetComponent<Rigidbody2D>()) // ja katsoo, onko jointin connectedbody sen objektin rigidbody, joka tuli triggeriin
-                                {
-                                    test[j] = false; // jos on, laittaa bool arrayn yhdeksi valueksi false
-                                }
-                            }
+                            FixedJoint2D[] existingJoints = GetComponents<FixedJoint2D>(); // Ottaa kaikki objektin jointit
+                            bool[] test = new bool[existingJoints.Length]; // tekee bool arrayn
 
-                            if (!ArrayCheck(test)) // k‰y kaikki bool arrayn valuet l‰pi, ja jos kaikki valuet on false niin tekee uuden jointin
+                            if (existingJoints.Length > 0) // tarkistaa onko jointteja yht‰‰n
+                            {
+                                for (int j = 0; j < existingJoints.Length; j++) // jos on jointteja, k‰y ne kaikki l‰pi
+                                {
+                                    if (existingJoints[j].connectedBody != collision.GetComponent<Rigidbody2D>()) // ja katsoo, onko jointin connectedbody sen objektin rigidbody, joka tuli triggeriin
+                                    {
+                                        test[j] = false; // jos on, laittaa bool arrayn yhdeksi valueksi false
+                                    }
+                                }
+
+                                if (!ArrayCheck(test)) // k‰y kaikki bool arrayn valuet l‰pi, ja jos kaikki valuet on false niin tekee uuden jointin
+                                {
+                                    FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
+                                    joint.connectedBody = collision.GetComponent<Rigidbody2D>();
+                                }
+
+                            }
+                            else // jos jointteja ei ole, tekee jointin
                             {
                                 FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
                                 joint.connectedBody = collision.GetComponent<Rigidbody2D>();
                             }
-
-                        }
-                        else // jos jointteja ei ole, tekee jointin
-                        {
-                            FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
-                            joint.connectedBody = collision.GetComponent<Rigidbody2D>();
                         }
                     }
                 }

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5041344852235846355}
   m_Layer: 6
   m_Name: Brick1
-  m_TagString: Untagged
+  m_TagString: Rubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 7384554950306915868}
   m_Layer: 6
   m_Name: Brick3
-  m_TagString: Untagged
+  m_TagString: Rubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -311,7 +311,7 @@ GameObject:
   - component: {fileID: 8632466137620210075}
   m_Layer: 6
   m_Name: Brick5
-  m_TagString: Untagged
+  m_TagString: Rubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 7874252275354990331}
   m_Layer: 6
   m_Name: Brick4
-  m_TagString: Untagged
+  m_TagString: Rubble
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -625,6 +625,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Particle System (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6000051802308181272, guid: 03480db0d5d4f3b439f1dc06b7bdecb8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Rubble
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03480db0d5d4f3b439f1dc06b7bdecb8, type: 3}

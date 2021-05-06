@@ -13,6 +13,7 @@ TagManager:
   - TntCube
   - Ground
   - Rubble
+  - ButtonPart
   layers:
   - Default
   - TransparentFX
