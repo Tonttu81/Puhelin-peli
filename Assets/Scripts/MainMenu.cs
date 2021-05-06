@@ -25,20 +25,24 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        //Vector3 temp = cam.ScreenToWorldPoint(Input.mousePosition);
-        //Vector3 pos = new Vector3(temp.x, temp.y, 0f);
-        //Instantiate(brokenButtonPrefab, pos, Quaternion.identity);
+        /*
+        Vector3 temp = cam.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 pos = new Vector3(temp.x, temp.y, 0f);
+        Instantiate(brokenButtonPrefab, pos, Quaternion.identity);
 
-        //Destroy();
+        Destroy();
+        */
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         
     }
     public void ExitGame()
     {
+        /*
         //Vector3 temp = cam.ScreenToWorldPoint(Input.mousePosition);
         //Vector3 pos = new Vector3(temp.x, temp.y, 0f);
         //Instantiate(brokenButtonPrefab, pos, Quaternion.identity);
+        */
 
         Application.Quit();
     }

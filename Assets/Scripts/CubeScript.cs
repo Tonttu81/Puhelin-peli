@@ -155,6 +155,17 @@ public class CubeScript : MonoBehaviour
                                 if (!ArrayCheck(test)) // käy kaikki bool arrayn valuet läpi, ja jos kaikki valuet on false niin tekee uuden jointin
                                 {
                                     FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
+                                    if (gameObject.tag == "StoneCube")
+                                    {
+                                        joint.breakForce = 2000f;
+                                        joint.breakTorque = 2000f;
+                                    }
+                                    else
+                                    {
+                                        joint.breakForce = 500f;
+                                        joint.breakTorque = 500f;
+                                    }
+                                    
                                     joint.connectedBody = collision.GetComponent<Rigidbody2D>();
                                 }
 
@@ -162,6 +173,16 @@ public class CubeScript : MonoBehaviour
                             else // jos jointteja ei ole, tekee jointin
                             {
                                 FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
+                                if (gameObject.tag == "StoneCube")
+                                {
+                                    joint.breakForce = 2000f;
+                                    joint.breakTorque = 2000f;
+                                }
+                                else
+                                {
+                                    joint.breakForce = 500f;
+                                    joint.breakTorque = 500f;
+                                }
                                 joint.connectedBody = collision.GetComponent<Rigidbody2D>();
                             }
                         }
