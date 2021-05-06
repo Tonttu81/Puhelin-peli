@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
-    path: Assets/Scenes/Jesse.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: ff57c1ad866acf94993ca0e13063de62
   - enabled: 1
-    path: Assets/Scenes/Joni.unity
+    path: Assets/Scenes/Sandbox.unity
     guid: 61bc301452707284cb2ce6e4c10179df
   m_configObjects: {}

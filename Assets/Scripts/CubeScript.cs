@@ -252,9 +252,9 @@ public class CubeScript : MonoBehaviour
         {
             if (hit[i].collider != null)
             {
-                if (hit[i].distance < 2)
+                if (hit[i].distance < 0.5)
                 {
-                    hit[i].collider.GetComponent<CubeScript>().hp -= 100;
+                    //hit[i].collider.GetComponent<CubeScript>().hp -= 100;
                 }
                 Vector2 dir = (hit[i].collider.transform.position - transform.position);
                 hit[i].collider.GetComponent<Rigidbody2D>().AddForce(dir * explosionForce, ForceMode2D.Impulse);
