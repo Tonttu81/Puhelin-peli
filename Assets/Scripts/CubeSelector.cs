@@ -10,7 +10,7 @@ public class CubeSelector : MonoBehaviour
 
     public GameObject woodCubePrefab;
     public GameObject stoneCubePrefab;
-    public GameObject metalCubePrefab;
+    public GameObject cannonPrefab;
     public GameObject TntCubePrefab;
 
     // Start is called before the first frame update
@@ -38,9 +38,9 @@ public class CubeSelector : MonoBehaviour
         gridScript.erasing = false;
     }
 
-    public void MetalCube()
+    public void Cannon()
     {
-        currentCube = metalCubePrefab;
+        currentCube = cannonPrefab;
         gridScript.erasing = false;
     }
 
