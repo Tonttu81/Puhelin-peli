@@ -26,6 +26,8 @@ public class GridScript : MonoBehaviour
     public GameObject stoneCubePrefab;
     public GameObject tntCubePrefab;
 
+    public GameObject Clearbutton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -95,8 +97,21 @@ public class GridScript : MonoBehaviour
             }
         }
 
+        Clearbutton.gameObject.SetActive(false);
         playing = true;
         gameObject.SetActive(false);
+    }
+
+    public void Clear()
+    {
+        CubeScript[] oldCubes = GameObject.FindObjectsOfType<CubeScript>();
+        for (int i = 0; i < oldCubes.Length; i++)
+        {
+            if ( !playing && oldCubes[i].gameObject.tag != "OverlayCube")
+            {
+                Destroy(oldCubes[i].gameObject);
+            }
+        }
     }
 
     public void Reload()
@@ -121,6 +136,7 @@ public class GridScript : MonoBehaviour
 
         playing = false;
         gameObject.SetActive(true);
+        Clearbutton.gameObject.SetActive(true);
 
 
         for (int i = 0; i < cubes.Length; i++)

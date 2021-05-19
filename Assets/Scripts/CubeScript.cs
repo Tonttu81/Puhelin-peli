@@ -17,6 +17,7 @@ public struct Cube
 
 public class CubeScript : MonoBehaviour
 {
+    Vector3[] dirs = { new Vector2(1, 0), new Vector2(-1, 0), new Vector2(0, 1), new Vector2(0, -1) };
     //public string cubeType;
     //public bool occupied;
 
@@ -25,6 +26,8 @@ public class CubeScript : MonoBehaviour
     public float hp;
 
     public float explosionForce;
+
+    
 
     GridScript gridScript;
 
@@ -52,13 +55,16 @@ public class CubeScript : MonoBehaviour
     {
         if (gameObject.tag != "OverlayCube")
         {
-            if (gridScript.playing)
+            if (gridScript)
             {
-                rb2D.isKinematic = false;
-            }
-            else
-            {
-                rb2D.isKinematic = true;
+                if (gridScript.playing)
+                {
+                    rb2D.isKinematic = false;
+                }
+                else
+                {
+                    rb2D.isKinematic = true;
+                }
             }
         }
         else
@@ -102,6 +108,16 @@ public class CubeScript : MonoBehaviour
                     break;
             }
         }
+
+        // hajottaa kaikki ylim‰‰r‰set jointit
+        FixedJoint2D[] extraJoints = GetComponents<FixedJoint2D>();
+        for (int i = 0; i < extraJoints.Length; i++)
+        {
+            if (extraJoints[i].connectedBody == null)
+            {
+                Destroy(extraJoints[i]);
+            }
+        }
     }
     public void SpawnCube()
     {
@@ -114,6 +130,67 @@ public class CubeScript : MonoBehaviour
         
         if (collision.tag != "OverlayCube")
         {
+            //dadaadad
+            if (gameObject.tag != "OverlayCube")
+            {
+                if (gridScript)
+                {
+                    if (!gridScript.playing)
+                    {
+                        if (AngleCheck(collision.transform))
+                        {
+                            FixedJoint2D[] existingJoints = GetComponents<FixedJoint2D>(); // Ottaa kaikki objektin jointit
+                            bool[] test = new bool[existingJoints.Length]; // tekee bool arrayn
+
+                            if (existingJoints.Length > 0) // tarkistaa onko jointteja yht‰‰n
+                            {
+                                for (int j = 0; j < existingJoints.Length; j++) // jos on jointteja, k‰y ne kaikki l‰pi
+                                {
+                                    if (existingJoints[j].connectedBody != collision.GetComponent<Rigidbody2D>()) // ja katsoo, onko jointin connectedbody sen objektin rigidbody, joka tuli triggeriin
+                                    {
+                                        test[j] = false; // jos on, laittaa bool arrayn yhdeksi valueksi false
+                                    }
+                                }
+
+                                if (!ArrayCheck(test)) // k‰y kaikki bool arrayn valuet l‰pi, ja jos kaikki valuet on false niin tekee uuden jointin
+                                {
+                                    FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
+                                    if (gameObject.tag == "StoneCube")
+                                    {
+                                        joint.breakForce = 2000f;
+                                        joint.breakTorque = 2000f;
+                                    }
+                                    else
+                                    {
+                                        joint.breakForce = 500f;
+                                        joint.breakTorque = 500f;
+                                    }
+                                    
+                                    joint.connectedBody = collision.GetComponent<Rigidbody2D>();
+                                }
+
+                            }
+                            else // jos jointteja ei ole, tekee jointin
+                            {
+                                FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
+                                if (gameObject.tag == "StoneCube")
+                                {
+                                    joint.breakForce = 2000f;
+                                    joint.breakTorque = 2000f;
+                                }
+                                else
+                                {
+                                    joint.breakForce = 500f;
+                                    joint.breakTorque = 500f;
+                                }
+                                joint.connectedBody = collision.GetComponent<Rigidbody2D>();
+                            }
+                        }
+                    }
+                }
+            }
+            
+
             Vector2 vel;
 
             if (collision.tag != "Ground")
@@ -159,6 +236,41 @@ public class CubeScript : MonoBehaviour
         }
     }
 
+    bool ArrayCheck(bool[] array)
+    {
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] == true)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    bool AngleCheck(Transform pos)
+    {
+        // lol se toimii
+        Vector2 dir = pos.position - transform.position;
+        if (dir == Vector2.down)
+        {
+            return true;
+        }
+        else if (dir == Vector2.up)
+        {
+            return true;
+        }
+        else if (dir == Vector2.left)
+        {
+            return true;
+        }
+        else if (dir == Vector2.right)
+        {
+            return true;
+        }
+        return false;
+    }
+
     void Explode()
     {
         CameraShake.Instance.ShakeCamera(0.2f, 0.35f);
@@ -167,9 +279,9 @@ public class CubeScript : MonoBehaviour
         {
             if (hit[i].collider != null)
             {
-                if (hit[i].distance < 2)
+                if (hit[i].distance < 0.5)
                 {
-                    hit[i].collider.GetComponent<CubeScript>().hp -= 100;
+                    //hit[i].collider.GetComponent<CubeScript>().hp -= 100;
                 }
                 Vector2 dir = (hit[i].collider.transform.position - transform.position);
                 hit[i].collider.GetComponent<Rigidbody2D>().AddForce(dir * explosionForce, ForceMode2D.Impulse);
