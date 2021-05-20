@@ -11,6 +11,7 @@ public class CubeDropper : MonoBehaviour
     public GameObject woodCubePrefab;
     public GameObject stoneCubePrefab;
     public GameObject tntCubePrefab;
+    public GameObject NukePrefab;
 
     Vector3 screenMin;
     Vector3 screenMax;
@@ -43,9 +44,15 @@ public class CubeDropper : MonoBehaviour
 
                 Quaternion randomRot = Quaternion.Euler(new Vector3(0, 0, Random.Range(0, 360)));
 
-                
+                int rng2 = Random.Range(1, 50);
+                if (rng2 == 7)
+                {
+                    GameObject Nuke = Instantiate(NukePrefab, randomPos, randomRot);
+                    Nuke.GetComponent<Rigidbody2D>().isKinematic = false;
+                }
 
                 int rng = Random.Range(1, 10);
+                
                 if (rng == 6)
                 {
                     randomCube = tntCubePrefab;

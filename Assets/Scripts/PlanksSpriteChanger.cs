@@ -43,10 +43,6 @@ public class PlanksSpriteChanger : MonoBehaviour
 
             if (Down == true && Right == true && Left == true && Up == true)
                 Lankut.sprite = Lankku3;
-
-
-
-
         }
     }
     Vector2 AngleCheck(Transform pos)
