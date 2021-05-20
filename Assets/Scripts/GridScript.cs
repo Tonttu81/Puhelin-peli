@@ -6,6 +6,7 @@ public class GridScript : MonoBehaviour
 {
     public bool erasing = false;
 
+    public bool rotating;
     public bool playing;
 
     int lapX = 0;
@@ -56,31 +57,34 @@ public class GridScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0)
+        if (!rotating)
         {
-            Touch touch = Input.GetTouch(0);
-            Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
-
-            RaycastHit2D hit = Physics2D.Raycast(touchPos, new Vector2(0f, 0f), 0f, cubeLayer);
-            if (hit.collider != null)
+            if (Input.touchCount > 0)
             {
-                if (erasing)
+                Touch touch = Input.GetTouch(0);
+                Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
+
+                RaycastHit2D hit = Physics2D.Raycast(touchPos, new Vector2(0f, 0f), 0f, cubeLayer);
+                if (hit.collider != null)
                 {
-                    if (hit.collider.tag != "OverlayCube")
+                    if (erasing)
                     {
-                        Destroy(hit.collider.gameObject);
-                    }
-                }
-                else
-                {
-                    if (hit.collider.tag == "OverlayCube")
-                    {
-                        hit.collider.GetComponent<CubeScript>().SpawnCube();
+                        if (hit.collider.tag != "OverlayCube")
+                        {
+                            Destroy(hit.collider.gameObject);
+                        }
                     }
                     else
                     {
-                        hit.collider.GetComponent<CubeScript>().SpawnCube();
-                        Destroy(hit.collider.gameObject);
+                        if (hit.collider.tag == "OverlayCube")
+                        {
+                            hit.collider.GetComponent<CubeScript>().SpawnCube();
+                        }
+                        else
+                        {
+                            hit.collider.GetComponent<CubeScript>().SpawnCube();
+                            Destroy(hit.collider.gameObject);
+                        }
                     }
                 }
             }
@@ -104,14 +108,25 @@ public class GridScript : MonoBehaviour
 
     public void Clear()
     {
-        CubeScript[] oldCubes = GameObject.FindObjectsOfType<CubeScript>();
-        for (int i = 0; i < oldCubes.Length; i++)
-        {
-            if ( !playing && oldCubes[i].gameObject.tag != "OverlayCube")
+        if (!playing)
+        {   
+            GameObject[] cannons = GameObject.FindGameObjectsWithTag("Cannon");
+            for (int i = 0; i < cannons.Length; i++)
             {
-                Destroy(oldCubes[i].gameObject);
+                Destroy(cannons[i]);
+            }
+            CubeScript[] oldCubes = GameObject.FindObjectsOfType<CubeScript>();
+            for (int i = 0; i < oldCubes.Length; i++)
+            {
+                if (oldCubes[i].gameObject.tag != "OverlayCube")
+                {
+                    Destroy(oldCubes[i].gameObject);
+                }
+
             }
         }
+        
+        
     }
 
     public void Reload()

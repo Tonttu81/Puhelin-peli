@@ -9,9 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 840804503359664583}
-  m_Layer: 0
+  - component: {fileID: 6095997122495773414}
+  - component: {fileID: 8333681434792445648}
+  m_Layer: 6
   m_Name: Cannon
-  m_TagString: Untagged
+  m_TagString: Cannon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,13 +27,56 @@ Transform:
   m_GameObject: {fileID: 840804503359664581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
   m_Children:
-  - {fileID: 86076423681974413}
+  - {fileID: 4952429652329546117}
   - {fileID: 5452150831337733645}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6095997122495773414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840804503359664581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20bbc6fd3dc572242a39ea4604decda6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletForce: 50
+  rotationPoint: {fileID: 4424500132749699089}
+  bulletSpawner: {fileID: 8022889113160189210}
+  bulletPrefab: {fileID: 700375761537858207, guid: 2fd050950b1d8ae47bfa2e970e8ce3a0,
+    type: 3}
+--- !u!61 &8333681434792445648
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840804503359664581}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.59, y: 0.6}
+  m_EdgeRadius: 0
 --- !u!1 &1349152610393894057
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,7 +87,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5452150831337733645}
   - component: {fileID: 65269534188380698}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CanonStandV2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1349152610393894057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.557, y: -0.196, z: 0}
+  m_LocalPosition: {x: 0, y: -0.164, z: 0}
   m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
   m_Children: []
   m_Father: {fileID: 840804503359664583}
@@ -114,6 +159,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &4424500132749699089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4952429652329546117}
+  m_Layer: 6
+  m_Name: RotationPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4952429652329546117
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4424500132749699089}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 86076423681974413}
+  m_Father: {fileID: 840804503359664583}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8022889113160189210
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,8 +199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6551238984907132213}
-  - component: {fileID: 2389407651522004550}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BallSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,27 +214,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8022889113160189210}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.296, y: 0.004, z: -4.513003}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 86076423681974413}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2389407651522004550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8022889113160189210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20bbc6fd3dc572242a39ea4604decda6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletTrajectory: {x: 200, y: 0}
-  bulletPrefab: {fileID: 700375761537858207, guid: 2fd050950b1d8ae47bfa2e970e8ce3a0,
-    type: 3}
 --- !u!1 &8695916858873195079
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 86076423681974413}
   - component: {fileID: 3021275998937946219}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,12 +244,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8695916858873195079}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.403, y: -0.01, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.101, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6551238984907132213}
-  m_Father: {fileID: 840804503359664583}
+  m_Father: {fileID: 4952429652329546117}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3021275998937946219
