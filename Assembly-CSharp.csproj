@@ -63,7 +63,6 @@
     <Compile Include="Assets\Scripts\CannonScript.cs" />
     <Compile Include="Assets\Scripts\ParticleRemover.cs" />
     <Compile Include="Assets\Scripts\CubeSelector.cs" />
-    <Compile Include="Assets\Scripts\TempBACKSRCipt.cs" />
     <Compile Include="Assets\Scripts\PlanksSpriteChanger.cs" />
     <Compile Include="Assets\Scripts\GridScript.cs" />
     <Compile Include="Assets\Scripts\Parallax.cs" />
@@ -72,8 +71,8 @@
     <Compile Include="Assets\Scripts\GroundMover.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\CubeDropper.cs" />
-    <Compile Include="Assets\Scripts\GlobalScript.cs" />
     <Compile Include="Assets\Scripts\CubeScript.cs" />
+    <Compile Include="Assets\Scripts\CameraPanZoom.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
