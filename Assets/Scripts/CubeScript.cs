@@ -165,7 +165,7 @@ public class CubeScript : MonoBehaviour
                                         joint.breakForce = 500f;
                                         joint.breakTorque = 500f;
                                     }
-                                    
+
                                     joint.connectedBody = collision.GetComponent<Rigidbody2D>();
                                 }
 
@@ -189,11 +189,10 @@ public class CubeScript : MonoBehaviour
                     }
                 }
             }
-            
 
             Vector2 vel;
 
-            if (collision.tag != "Ground")
+            if (collision.tag != "Ground" && collision.tag != "Cannon")
             {
                 vel = collision.GetComponent<Rigidbody2D>().velocity;
             }
@@ -279,12 +278,15 @@ public class CubeScript : MonoBehaviour
         {
             if (hit[i].collider != null)
             {
-                if (hit[i].distance < 0.5)
+                if (hit[i].collider.tag != "Cannon")
                 {
-                    //hit[i].collider.GetComponent<CubeScript>().hp -= 100;
+                    if (hit[i].distance < 0.5)
+                    {
+                        //hit[i].collider.GetComponent<CubeScript>().hp -= 100;
+                    }
+                    Vector2 dir = (hit[i].collider.transform.position - transform.position);
+                    hit[i].collider.GetComponent<Rigidbody2D>().AddForce(dir * explosionForce, ForceMode2D.Impulse);
                 }
-                Vector2 dir = (hit[i].collider.transform.position - transform.position);
-                hit[i].collider.GetComponent<Rigidbody2D>().AddForce(dir * explosionForce, ForceMode2D.Impulse);
             }
         }
     }
