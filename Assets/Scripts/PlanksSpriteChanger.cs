@@ -14,8 +14,6 @@ public class PlanksSpriteChanger : MonoBehaviour
     public bool Left;
     public bool Up;
     public bool Down;
-
-    public string PlankTag;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PlanksSpriteChanger planksSpriteChanger = collision.GetComponent<PlanksSpriteChanger>();
@@ -23,13 +21,9 @@ public class PlanksSpriteChanger : MonoBehaviour
         {
             Vector2 Direction = AngleCheck(collision.transform);
 
-            if (Down = true && Left != true && Right != true)
-                Lankut.sprite = Lankku1;
-            if (Left = true && Up != true && Down != true)
+            if (Right == true || Left == true && Up != true && Down != true)
                 Lankut.sprite = Lankku2;
-            if (Right = true && Up != true && Down != true)
-                Lankut.sprite = Lankku2;
-            if (Up = true && Left != true && Right != true)
+            if (Down == true || Up == true && Left != true && Right != true)
                 Lankut.sprite = Lankku1;
 
             if (Up == true && Left == true && Right != true && Down != true)

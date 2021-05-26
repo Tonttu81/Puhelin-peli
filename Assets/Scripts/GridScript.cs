@@ -26,6 +26,7 @@ public class GridScript : MonoBehaviour
     public GameObject woodCubePrefab;
     public GameObject stoneCubePrefab;
     public GameObject tntCubePrefab;
+    public GameObject WoodenPlanks;
 
     public GameObject Clearbutton;
 
