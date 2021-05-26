@@ -155,6 +155,17 @@ public class CubeScript : MonoBehaviour
                                 if (!ArrayCheck(test)) // käy kaikki bool arrayn valuet läpi, ja jos kaikki valuet on false niin tekee uuden jointin
                                 {
                                     FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
+                                    if (gameObject.tag == "StoneCube")
+                                    {
+                                        joint.breakForce = 2000f;
+                                        joint.breakTorque = 2000f;
+                                    }
+                                    else
+                                    {
+                                        joint.breakForce = 500f;
+                                        joint.breakTorque = 500f;
+                                    }
+
                                     joint.connectedBody = collision.GetComponent<Rigidbody2D>();
                                 }
 
@@ -162,17 +173,26 @@ public class CubeScript : MonoBehaviour
                             else // jos jointteja ei ole, tekee jointin
                             {
                                 FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
+                                if (gameObject.tag == "StoneCube")
+                                {
+                                    joint.breakForce = 2000f;
+                                    joint.breakTorque = 2000f;
+                                }
+                                else
+                                {
+                                    joint.breakForce = 500f;
+                                    joint.breakTorque = 500f;
+                                }
                                 joint.connectedBody = collision.GetComponent<Rigidbody2D>();
                             }
                         }
                     }
                 }
             }
-            
 
             Vector2 vel;
 
-            if (collision.tag != "Ground")
+            if (collision.tag != "Ground" && collision.tag != "Cannon")
             {
                 vel = collision.GetComponent<Rigidbody2D>().velocity;
             }
@@ -258,12 +278,15 @@ public class CubeScript : MonoBehaviour
         {
             if (hit[i].collider != null)
             {
-                if (hit[i].distance < 0.5)
+                if (hit[i].collider.tag != "Cannon")
                 {
-                    //hit[i].collider.GetComponent<CubeScript>().hp -= 100;
+                    if (hit[i].distance < 0.5)
+                    {
+                        //hit[i].collider.GetComponent<CubeScript>().hp -= 100;
+                    }
+                    Vector2 dir = (hit[i].collider.transform.position - transform.position);
+                    hit[i].collider.GetComponent<Rigidbody2D>().AddForce(dir * explosionForce, ForceMode2D.Impulse);
                 }
-                Vector2 dir = (hit[i].collider.transform.position - transform.position);
-                hit[i].collider.GetComponent<Rigidbody2D>().AddForce(dir * explosionForce, ForceMode2D.Impulse);
             }
         }
     }
