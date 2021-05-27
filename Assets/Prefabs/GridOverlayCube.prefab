@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6763303514273565831}
   - component: {fileID: -2629602709436835075}
   - component: {fileID: 6233537627650171371}
+  - component: {fileID: 1603495579312018123}
   m_Layer: 6
   m_Name: GridOverlayCube
   m_TagString: OverlayCube
@@ -130,3 +131,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!111 &1603495579312018123
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127385090543506385}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: cc64f8a8becf8f042b58658d940c6fe2, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: cc64f8a8becf8f042b58658d940c6fe2, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0

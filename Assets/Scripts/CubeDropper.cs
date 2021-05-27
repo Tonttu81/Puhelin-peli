@@ -12,6 +12,7 @@ public class CubeDropper : MonoBehaviour
     public GameObject stoneCubePrefab;
     public GameObject tntCubePrefab;
     public GameObject NukePrefab;
+    public GameObject SlimeBlockPreFab;
 
     Vector3 screenMin;
     Vector3 screenMax;
@@ -60,6 +61,10 @@ public class CubeDropper : MonoBehaviour
                 else if (rng <= 5)
                 {
                     randomCube = woodCubePrefab;
+                }
+                else if (rng == 7)
+                {
+                    randomCube = SlimeBlockPreFab;
                 }
                 else
                 {
