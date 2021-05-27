@@ -14,6 +14,7 @@ public class CubeSelector : MonoBehaviour
     public GameObject flamethrowerPrefab;
     public GameObject TntCubePrefab;
     public GameObject PlanksPrefab;
+    public GameObject SlimeBlock;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +61,11 @@ public class CubeSelector : MonoBehaviour
     public void TnTCube()
     {
         currentCube = TntCubePrefab;
+        gridScript.erasing = false;
+    }
+    public void SlimeCube()
+    {
+        currentCube = SlimeBlock;
         gridScript.erasing = false;
     }
 

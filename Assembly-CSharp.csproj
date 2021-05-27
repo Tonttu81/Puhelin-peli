@@ -59,10 +59,13 @@
     <Compile Include="Assets\Scripts\MenuScroll.cs" />
     <Compile Include="Assets\Scripts\UIScript.cs" />
     <Compile Include="Assets\TestScript.cs" />
+    <Compile Include="Assets\Flammable.cs" />
     <Compile Include="Assets\Scripts\Debris.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\ButtonExplosion.cs" />
+    <Compile Include="Assets\FireScript.cs" />
     <Compile Include="Assets\Scripts\CannonScript.cs" />
+    <Compile Include="Assets\Scripts\record.cs" />
     <Compile Include="Assets\Scripts\ParticleRemover.cs" />
     <Compile Include="Assets\Scripts\CubeSelector.cs" />
     <Compile Include="Assets\Scripts\CameraPanZoom.cs" />
@@ -74,10 +77,9 @@
     <Compile Include="Assets\Scripts\GroundMover.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
     <Compile Include="Assets\Scripts\CubeDropper.cs" />
-    <Compile Include="Assets\Scripts\CubeScript.cs" />
     <Compile Include="Assets\FlamethrowerScript.cs" />
-    <Compile Include="Assets\FireScript.cs" />
-    <Compile Include="Assets\Flammable.cs" />
+    <Compile Include="Assets\Scripts\CubeScript.cs" />
+    <Compile Include="Assets\Scripts\Ruble.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

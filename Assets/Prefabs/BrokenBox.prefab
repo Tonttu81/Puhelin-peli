@@ -4888,6 +4888,8 @@ GameObject:
   - component: {fileID: 3675616789143302369}
   - component: {fileID: 5581782302714129638}
   - component: {fileID: 7366675524560308805}
+  - component: {fileID: 1368048621582705630}
+  - component: {fileID: 6728322587625049698}
   m_Layer: 6
   m_Name: BrokenBox2 (3)
   m_TagString: Rubble
@@ -5008,6 +5010,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1368048621582705630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2598783700099336207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea31e66b1dde654186cb21d895ad12c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireEffect: {fileID: 0}
+--- !u!114 &6728322587625049698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2598783700099336207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7946431e2f0e83b4c934908688edbdd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CL: {fileID: 5581782302714129638}
+  RB: {fileID: 7366675524560308805}
 --- !u!1 &4738547797398322857
 GameObject:
   m_ObjectHideFlags: 0
@@ -14809,6 +14839,8 @@ GameObject:
   - component: {fileID: 6443856928436290993}
   - component: {fileID: 6443856928436290991}
   - component: {fileID: 6443856928436290990}
+  - component: {fileID: 8202286470521534891}
+  - component: {fileID: 6797864873763910893}
   m_Layer: 6
   m_Name: BrokenBox2
   m_TagString: Rubble
@@ -14929,6 +14961,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8202286470521534891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6443856928436290995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea31e66b1dde654186cb21d895ad12c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireEffect: {fileID: 0}
+--- !u!114 &6797864873763910893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6443856928436290995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7946431e2f0e83b4c934908688edbdd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CL: {fileID: 5581782302714129638}
+  RB: {fileID: 7366675524560308805}
 --- !u!1 &6443856929018552334
 GameObject:
   m_ObjectHideFlags: 0
@@ -14941,6 +15001,8 @@ GameObject:
   - component: {fileID: 6443856929018552332}
   - component: {fileID: 6443856929018552330}
   - component: {fileID: 6443856929018552333}
+  - component: {fileID: 1986826355201297033}
+  - component: {fileID: 7580711872085467220}
   m_Layer: 6
   m_Name: BrokenBox (1)
   m_TagString: Rubble
@@ -15061,6 +15123,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1986826355201297033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6443856929018552334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea31e66b1dde654186cb21d895ad12c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireEffect: {fileID: 0}
+--- !u!114 &7580711872085467220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6443856929018552334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7946431e2f0e83b4c934908688edbdd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CL: {fileID: 5581782302714129638}
+  RB: {fileID: 7366675524560308805}
 --- !u!1 &6443856929251896316
 GameObject:
   m_ObjectHideFlags: 0
@@ -15073,6 +15163,8 @@ GameObject:
   - component: {fileID: 6443856929251896314}
   - component: {fileID: 6443856929251896312}
   - component: {fileID: 6443856929251896315}
+  - component: {fileID: 5107111829140431924}
+  - component: {fileID: 5675672866726308966}
   m_Layer: 6
   m_Name: BrokenBox
   m_TagString: Rubble
@@ -15193,6 +15285,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5107111829140431924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6443856929251896316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea31e66b1dde654186cb21d895ad12c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireEffect: {fileID: 0}
+--- !u!114 &5675672866726308966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6443856929251896316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7946431e2f0e83b4c934908688edbdd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CL: {fileID: 5581782302714129638}
+  RB: {fileID: 7366675524560308805}
 --- !u!1 &6497703504189781423
 GameObject:
   m_ObjectHideFlags: 0
@@ -20081,6 +20201,8 @@ GameObject:
   - component: {fileID: 972403755402976299}
   - component: {fileID: 5106062642213502008}
   - component: {fileID: 9106593752367589543}
+  - component: {fileID: 5633525718139671877}
+  - component: {fileID: 6950031875728720660}
   m_Layer: 6
   m_Name: BrokenBox2 (1)
   m_TagString: Rubble
@@ -20201,6 +20323,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5633525718139671877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6622467697031943497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea31e66b1dde654186cb21d895ad12c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireEffect: {fileID: 0}
+--- !u!114 &6950031875728720660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6622467697031943497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7946431e2f0e83b4c934908688edbdd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CL: {fileID: 5581782302714129638}
+  RB: {fileID: 7366675524560308805}
 --- !u!1 &8299653418219681480
 GameObject:
   m_ObjectHideFlags: 0
@@ -25089,6 +25239,8 @@ GameObject:
   - component: {fileID: 1250650453458400485}
   - component: {fileID: 4010499180266977722}
   - component: {fileID: 5459117798630952375}
+  - component: {fileID: 8080126654103421166}
+  - component: {fileID: 4847110474541449847}
   m_Layer: 6
   m_Name: BrokenBox2 (2)
   m_TagString: Rubble
@@ -25209,6 +25361,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &8080126654103421166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8604251001223446134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea31e66b1dde654186cb21d895ad12c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  burning: 0
+  FireEffect: {fileID: 0}
+--- !u!114 &4847110474541449847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8604251001223446134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7946431e2f0e83b4c934908688edbdd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CL: {fileID: 5581782302714129638}
+  RB: {fileID: 7366675524560308805}
 --- !u!1 &8935355371360297136
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,12 +5,14 @@ using UnityEngine;
 public class Flammable : MonoBehaviour
 {
     public bool burning;
+    public GameObject FireEffect;
 
     CubeScript cubeScript;
 
     // Start is called before the first frame update
     void Start()
     {
+        
         cubeScript = GetComponent<CubeScript>();
     }
 
@@ -29,6 +31,7 @@ public class Flammable : MonoBehaviour
         {
             if (Random.Range(1, 5) == 2)
             {
+                FireEffect.SetActive(true);
                 burning = true;
                 cubeScript.hp--;
             }

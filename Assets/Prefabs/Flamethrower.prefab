@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2870fb8014649e949b4013be04ee4dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireSpeed: 5
+  fireSpeed: 10
   rotationPoint: {fileID: 4406534507326333663}
   bulletSpawner: {fileID: 8004826732393271252}
   firePrefab: {fileID: 8043878950962051726, guid: b757f574dd469ac4db14d47a7d2419ef,
