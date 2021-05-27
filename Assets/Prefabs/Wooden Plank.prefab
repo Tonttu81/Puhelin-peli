@@ -193,9 +193,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Lankut: {fileID: 2908901051210412916}
-  Lankku1: {fileID: 0}
-  Lankku2: {fileID: 0}
-  Lankku3: {fileID: 0}
+  Lankku1: {fileID: 21300000, guid: cd8036c32c4c02a40a14c07a24701078, type: 3}
+  Lankku2: {fileID: 21300000, guid: d7a95aea0fd14ec498a87bb6a3943a23, type: 3}
+  Lankku3: {fileID: 21300000, guid: afe3e88affbc14e47b58b3d0eb652f64, type: 3}
   Right: 0
   Left: 0
   Up: 0

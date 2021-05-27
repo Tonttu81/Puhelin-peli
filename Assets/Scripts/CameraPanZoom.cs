@@ -5,8 +5,6 @@ using Cinemachine;
 
 public class CameraPanZoom : MonoBehaviour
 {
-    CameraPanZoom cameraPanZoom;
-
     public float MaxZoom = 1;
     public float MinZoom = 8;
     public bool CamLock;
@@ -46,15 +44,14 @@ public class CameraPanZoom : MonoBehaviour
             Cam.transform.position += direction;
         }   
     }
+
     public void Zoom(float increment)
     {
         Cam.m_Lens.OrthographicSize = Mathf.Clamp(Camera.main.orthographicSize - increment, MinZoom, MaxZoom);
     }
+
     public void CamLocker()
     {
-        if (CamLock == true)
-            CamLock = false;
-        if (CamLock == false)
-            CamLock = true;
+        CamLock = !CamLock;
     }
 }
