@@ -192,7 +192,7 @@ public class CubeScript : MonoBehaviour
 
             Vector2 vel;
 
-            if (collision.tag != "Ground" && collision.tag != "Cannon")
+            if (collision.tag != "Ground" && collision.tag != "Cannon") 
             {
                 vel = collision.GetComponent<Rigidbody2D>().velocity;
             }
@@ -230,8 +230,10 @@ public class CubeScript : MonoBehaviour
                 y = vel.y;
             }
 
-
-            hp -= (x + y) / 2;
+            if (collision.tag != "Fire")
+            {
+                hp -= (x + y) / 2;
+            }
         }
     }
 

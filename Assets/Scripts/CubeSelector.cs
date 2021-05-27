@@ -11,6 +11,7 @@ public class CubeSelector : MonoBehaviour
     public GameObject woodCubePrefab;
     public GameObject stoneCubePrefab;
     public GameObject cannonPrefab;
+    public GameObject flamethrowerPrefab;
     public GameObject TntCubePrefab;
     public GameObject PlanksPrefab;
 
@@ -47,6 +48,12 @@ public class CubeSelector : MonoBehaviour
     public void Cannon()
     {
         currentCube = cannonPrefab;
+        gridScript.erasing = false;
+    }
+
+    public void Flamethrower()
+    {
+        currentCube = flamethrowerPrefab;
         gridScript.erasing = false;
     }
 

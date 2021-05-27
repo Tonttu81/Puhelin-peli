@@ -15,6 +15,7 @@ TagManager:
   - Rubble
   - ButtonPart
   - Cannon
+  - Fire
   layers:
   - Default
   - TransparentFX
