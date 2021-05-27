@@ -10,18 +10,8 @@ public class MainMenu : MonoBehaviour
 
     public GameObject brokenButtonPrefab;
 
-    public GameObject panel1;
-    public GameObject panel2;
-
-    private void Start()
-    {
-        
-    }
-
-    private void Update()
-    {
-        
-    }
+    public Animator transition;
+    public float transitiontime;
 
     public void PlayGame()
     {
@@ -33,7 +23,7 @@ public class MainMenu : MonoBehaviour
         Destroy();
         */
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(LevelLoad(SceneManager.GetActiveScene().buildIndex + 1));
         
     }
     public void ExitGame()
@@ -46,4 +36,12 @@ public class MainMenu : MonoBehaviour
 
         Application.Quit();
     }
+    IEnumerator LevelLoad(int LevelIndex)
+    {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitiontime);
+        SceneManager.LoadScene(LevelIndex);
+    }
+
+   
 }
