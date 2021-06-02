@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
@@ -8,6 +8,8 @@ public class CameraPanZoom : MonoBehaviour
     public float MaxZoom = 1;
     public float MinZoom = 8;
     public bool CamLock;
+    public GameObject CamButton1;
+    public GameObject CamButton2;
 
     CinemachineVirtualCamera Cam;
 
@@ -34,6 +36,7 @@ public class CameraPanZoom : MonoBehaviour
 
             float difference = CurrentMagnitute - PrevMagnitute;
 
+
             Zoom(difference * 0.01f);
         }
         if (CamLock == false && Input.GetMouseButtonDown(0))
@@ -51,7 +54,18 @@ public class CameraPanZoom : MonoBehaviour
     }
 
     public void CamLocker()
-    {
+    {       
         CamLock = !CamLock;
+
+        if (CamLock == true)
+        {
+            CamButton1.SetActive(true);
+            CamButton2.SetActive(false);
+        }
+        else if (CamLock == false)
+        {
+            CamButton1.SetActive(false);
+            CamButton2.SetActive(true);
+        }
     }
 }
