@@ -150,6 +150,14 @@ public class GridScript : MonoBehaviour
             Destroy(projectiles[i]);
         }
 
+        GameObject[] fire = GameObject.FindGameObjectsWithTag("Fire");
+        for (int i = 0; i < fire.Length; i++)
+        {
+            Destroy(fire[i]);
+        }
+
+
+
         playing = false;
         gameObject.SetActive(true);
         Clearbutton.gameObject.SetActive(true);

@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 1
-  explosionForce: 22.4852
+  explosionForce: 2
   rb2D: {fileID: 3247531602955499635}
   cubeMask:
     serializedVersion: 2

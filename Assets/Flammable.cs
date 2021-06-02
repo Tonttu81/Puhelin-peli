@@ -22,7 +22,20 @@ public class Flammable : MonoBehaviour
         if (burning)
         {
             cubeScript.hp -= Time.deltaTime;
-        }
+            FireEffect.SetActive(true);
+
+            RaycastHit2D[] boxCast = Physics2D.BoxCastAll(transform.position, new Vector2(1.5f, 1.5f), 0f, Vector2.zero);
+            for (int i = 0; i < boxCast.Length; i++)
+            {
+                if (boxCast[i].collider.tag == "WoodCube")
+                {
+                    if (Random.Range(1, 150) == 1)
+                    {
+                        boxCast[i].collider.GetComponent<Flammable>().burning = true;
+                    }
+                }
+            }
+        }        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,7 +44,6 @@ public class Flammable : MonoBehaviour
         {
             if (Random.Range(1, 5) == 2)
             {
-                FireEffect.SetActive(true);
                 burning = true;
                 cubeScript.hp--;
             }
@@ -44,7 +56,7 @@ public class Flammable : MonoBehaviour
         {
             if (Random.Range(1, 5) == 1)
             {
-                collision.GetComponent<Flammable>().burning = true;
+                //collision.GetComponent<Flammable>().burning = true;
             }
         }
     }

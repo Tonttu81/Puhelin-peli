@@ -27,8 +27,6 @@ public class CubeScript : MonoBehaviour
 
     public float explosionForce;
 
-    
-
     GridScript gridScript;
 
     CubeSelector cubeSelector;
@@ -102,6 +100,7 @@ public class CubeScript : MonoBehaviour
                     Destroy(gameObject);
                     break;
                 case "TntCube":
+                    DamageCubes();
                     Explode();
                     Instantiate(Explosion, transform.position, transform.rotation);
                     Destroy(gameObject);
@@ -272,22 +271,37 @@ public class CubeScript : MonoBehaviour
         return false;
     }
 
-    void Explode()
+    void DamageCubes()
     {
         CameraShake.Instance.ShakeCamera(0.2f, 0.35f);
-        RaycastHit2D[] hit = Physics2D.CircleCastAll(transform.position, 10f, Vector2.zero, 0f, cubeMask);
-        for (int i = 0; i < hit.Length; i++)
+        RaycastHit2D[] firstHit = Physics2D.CircleCastAll(transform.position, 5f, Vector2.zero, 0f, cubeMask);
+        for (int i = 0; i < firstHit.Length; i++)
         {
-            if (hit[i].collider != null)
+            if (firstHit[i].collider != null)
             {
-                if (hit[i].collider.tag != "Cannon")
+                if (firstHit[i].collider.tag != "Cannon")
                 {
-                    if (hit[i].distance < 0.5)
+                    if (firstHit[i].collider.tag != "Rubble")
                     {
-                        //hit[i].collider.GetComponent<CubeScript>().hp -= 100;
+                        firstHit[i].collider.GetComponent<CubeScript>().hp -= 100;
                     }
-                    Vector2 dir = (hit[i].collider.transform.position - transform.position);
-                    hit[i].collider.GetComponent<Rigidbody2D>().AddForce(dir * explosionForce, ForceMode2D.Impulse);
+                    
+                }
+            }
+        }
+    }
+
+    void Explode()
+    {
+        RaycastHit2D[] secondHit = Physics2D.CircleCastAll(transform.position, 10f, Vector2.zero, 0f);
+        for (int i = 0; i < secondHit.Length; i++)
+        {
+            if (secondHit[i].collider != null)
+            {
+                if (secondHit[i].collider.tag != "Cannon" && secondHit[i].collider.tag != "Ground")
+                {
+                    Vector2 dir = (secondHit[i].collider.transform.position - transform.position);
+                    secondHit[i].collider.GetComponent<Rigidbody2D>().AddForce(dir * explosionForce, ForceMode2D.Impulse);
                 }
             }
         }
