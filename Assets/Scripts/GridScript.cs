@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class GridScript : MonoBehaviour
 {
@@ -23,11 +24,15 @@ public class GridScript : MonoBehaviour
     CubeScript[] cubeScripts;
     public GameObject[] cubes;
 
+    public CameraPanZoom CamP;
+
     public GameObject woodCubePrefab;
     public GameObject stoneCubePrefab;
     public GameObject tntCubePrefab;
     public GameObject WoodenPlanks;
 
+    public GameObject CubeMenu;
+    public GameObject eraser;
     public GameObject Clearbutton;
 
     // Start is called before the first frame update
@@ -66,7 +71,7 @@ public class GridScript : MonoBehaviour
                 Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
 
                 RaycastHit2D hit = Physics2D.Raycast(touchPos, new Vector2(0f, 0f), 0f, cubeLayer);
-                if (hit.collider != null)
+                if (!IsPointerOverUIObject() && hit.collider != null)
                 {
                     if (erasing)
                     {
@@ -87,6 +92,7 @@ public class GridScript : MonoBehaviour
                             Destroy(hit.collider.gameObject);
                         }
                     }
+
                 }
             }
         }
@@ -103,6 +109,8 @@ public class GridScript : MonoBehaviour
         }
 
         Clearbutton.gameObject.SetActive(false);
+        eraser.gameObject.SetActive(false);
+        CubeMenu.gameObject.SetActive(false);
         playing = true;
         gameObject.SetActive(false);
     }
@@ -161,6 +169,8 @@ public class GridScript : MonoBehaviour
         playing = false;
         gameObject.SetActive(true);
         Clearbutton.gameObject.SetActive(true);
+        eraser.gameObject.SetActive(true);
+        CubeMenu.gameObject.SetActive(true);
 
 
         for (int i = 0; i < cubes.Length; i++)
@@ -181,5 +191,14 @@ public class GridScript : MonoBehaviour
                 }
             }
         }
+    }
+
+    private bool IsPointerOverUIObject()
+    {
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        return results.Count > 0;
     }
 }

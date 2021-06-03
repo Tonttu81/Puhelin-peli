@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.EventSystems;
 
 public class CameraPanZoom : MonoBehaviour
 {
+
+    //tän vois tehä paremmin mutta....
+    public GameObject Grid;
+
     public float MaxZoom = 1;
     public float MinZoom = 8;
     public bool CamLock;
@@ -36,8 +41,6 @@ public class CameraPanZoom : MonoBehaviour
 
             float difference = CurrentMagnitute - PrevMagnitute;
 
-
-            Zoom(difference * 0.01f);
         }
         if (CamLock == false && Input.GetMouseButtonDown(0))
             touchStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -48,22 +51,19 @@ public class CameraPanZoom : MonoBehaviour
         }   
     }
 
-    public void Zoom(float increment)
-    {
-        Cam.m_Lens.OrthographicSize = Mathf.Clamp(Camera.main.orthographicSize - increment, MinZoom, MaxZoom);
-    }
-
     public void CamLocker()
     {       
         CamLock = !CamLock;
 
         if (CamLock == true)
         {
+            
             CamButton1.SetActive(true);
             CamButton2.SetActive(false);
         }
         else if (CamLock == false)
         {
+            
             CamButton1.SetActive(false);
             CamButton2.SetActive(true);
         }

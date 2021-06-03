@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public struct Cube
 {
     public string cubeType;
     public bool occupied;
-
 
     public Cube(string _cubeType, bool _occupied)
     {
@@ -65,7 +65,7 @@ public class CubeScript : MonoBehaviour
                 }
             }
         }
-        else
+        else 
         {
             RaycastHit2D gridCheck = Physics2D.Raycast(transform.position, new Vector3(0f, 0f, -2f), 20f);
             if (gridCheck.collider.gameObject != null)
