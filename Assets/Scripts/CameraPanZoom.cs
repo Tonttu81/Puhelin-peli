@@ -11,6 +11,9 @@ public class CameraPanZoom : MonoBehaviour
     public GameObject CamButton1;
     public GameObject CamButton2;
 
+    float x;
+    float y;
+
     CinemachineVirtualCamera Cam;
 
     Vector3 touchStart;
@@ -23,34 +26,21 @@ public class CameraPanZoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CamLock == false && Input.touchCount == 2)
-        {
-            Touch Zero = Input.GetTouch(0);
-            Touch One = Input.GetTouch(1);
-
-            Vector2 TouchZeroPrevPos = Zero.position - Zero.deltaPosition;
-            Vector2 TouchOnePrevPos = One.position - One.deltaPosition;
-
-            float PrevMagnitute = (TouchZeroPrevPos = TouchOnePrevPos).magnitude;
-            float CurrentMagnitute = (Zero.position - One.position).magnitude;
-
-            float difference = CurrentMagnitute - PrevMagnitute;
-
-
-            Zoom(difference * 0.01f);
-        }
         if (CamLock == false && Input.GetMouseButtonDown(0))
             touchStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         if (CamLock == false && Input.GetMouseButton(0))
         {
             Vector3 direction = touchStart - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Cam.transform.position += direction;
-        }   
-    }
 
-    public void Zoom(float increment)
-    {
-        Cam.m_Lens.OrthographicSize = Mathf.Clamp(Camera.main.orthographicSize - increment, MinZoom, MaxZoom);
+            x += direction.x;
+            y += direction.y;
+            x = Mathf.Clamp(x, -12.5f, 17);
+            y = Mathf.Clamp(y, -2.5f, 23);
+
+            Vector3 clamp = new Vector3(x, y, -754f);
+
+            Cam.transform.position = clamp;
+        }   
     }
 
     public void CamLocker()

@@ -16,6 +16,8 @@ TagManager:
   - ButtonPart
   - Cannon
   - Fire
+  - Nuke
+  - SlimeBlock
   layers:
   - Default
   - TransparentFX

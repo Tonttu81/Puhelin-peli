@@ -26,6 +26,8 @@ public class CubeScript : MonoBehaviour
     public float hp;
 
     public float explosionForce;
+    public float explosionRadius;
+    public float explosionDamageRadius;
 
     GridScript gridScript;
 
@@ -100,6 +102,12 @@ public class CubeScript : MonoBehaviour
                     Destroy(gameObject);
                     break;
                 case "TntCube":
+                    DamageCubes();
+                    Explode();
+                    Instantiate(Explosion, transform.position, transform.rotation);
+                    Destroy(gameObject);
+                    break;
+                case "Nuke":
                     DamageCubes();
                     Explode();
                     Instantiate(Explosion, transform.position, transform.rotation);
@@ -274,7 +282,7 @@ public class CubeScript : MonoBehaviour
     void DamageCubes()
     {
         CameraShake.Instance.ShakeCamera(0.2f, 0.35f);
-        RaycastHit2D[] firstHit = Physics2D.CircleCastAll(transform.position, 5f, Vector2.zero, 0f, cubeMask);
+        RaycastHit2D[] firstHit = Physics2D.CircleCastAll(transform.position, explosionDamageRadius, Vector2.zero, 0f, cubeMask);
         for (int i = 0; i < firstHit.Length; i++)
         {
             if (firstHit[i].collider != null)
@@ -293,7 +301,7 @@ public class CubeScript : MonoBehaviour
 
     void Explode()
     {
-        RaycastHit2D[] secondHit = Physics2D.CircleCastAll(transform.position, 10f, Vector2.zero, 0f);
+        RaycastHit2D[] secondHit = Physics2D.CircleCastAll(transform.position, explosionRadius, Vector2.zero, 0f);
         for (int i = 0; i < secondHit.Length; i++)
         {
             if (secondHit[i].collider != null)

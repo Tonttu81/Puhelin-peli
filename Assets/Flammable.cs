@@ -8,12 +8,19 @@ public class Flammable : MonoBehaviour
     public GameObject FireEffect;
 
     CubeScript cubeScript;
+    Ruble ruble;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-        cubeScript = GetComponent<CubeScript>();
+        if (gameObject.tag != "Rubble")
+        {
+            cubeScript = GetComponent<CubeScript>();
+        }
+        else
+        {
+            ruble = GetComponent<Ruble>();
+        }
     }
 
     // Update is called once per frame
@@ -21,13 +28,20 @@ public class Flammable : MonoBehaviour
     {
         if (burning)
         {
-            cubeScript.hp -= Time.deltaTime;
+            if (gameObject.tag != "Rubble")
+            {
+                cubeScript.hp -= Time.deltaTime;
+            }
+            else
+            {
+                ruble.hp -= Time.deltaTime;
+            }
             FireEffect.SetActive(true);
 
             RaycastHit2D[] boxCast = Physics2D.BoxCastAll(transform.position, new Vector2(1.5f, 1.5f), 0f, Vector2.zero);
             for (int i = 0; i < boxCast.Length; i++)
             {
-                if (boxCast[i].collider.tag == "WoodCube")
+                if (boxCast[i].collider.tag == "WoodCube" || boxCast[i].collider.tag == "Rubble")
                 {
                     if (Random.Range(1, 150) == 1)
                     {
@@ -35,7 +49,9 @@ public class Flammable : MonoBehaviour
                     }
                 }
             }
-        }        
+        }
+
+        FireEffect.transform.rotation = Quaternion.LookRotation(Vector2.up, Vector2.up);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -44,8 +60,16 @@ public class Flammable : MonoBehaviour
         {
             if (Random.Range(1, 5) == 2)
             {
+                if (gameObject.tag != "Rubble")
+                {
+                    cubeScript.hp--;
+                }
+                else
+                {
+                    ruble.hp--;
+                }
                 burning = true;
-                cubeScript.hp--;
+                
             }
         }
     }

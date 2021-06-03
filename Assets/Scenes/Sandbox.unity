@@ -651,7 +651,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 441790651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04, y: 0.22, z: -754.8551}
+  m_LocalPosition: {x: 0, y: 0, z: -754.8551}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1696425888}
@@ -1037,7 +1037,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 817210028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.04, y: 0.22, z: -754.8551}
+  m_LocalPosition: {x: 0, y: 0, z: -754.8551}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2803,6 +2803,10 @@ MonoBehaviour:
   tntCubePrefab: {fileID: 3247531602955499636, guid: 8a8b9ab1f37e65545a0d9e3162c647c8,
     type: 3}
   WoodenPlanks: {fileID: 0}
+  nukePrefab: {fileID: 3247531602955499636, guid: fb40c226f898d0c4e806bfe461526fb2,
+    type: 3}
+  slimeBlockPrefab: {fileID: 2908901051210412919, guid: a861e4f8e7e546b4ca63e97fbeb0b5fe,
+    type: 3}
   Clearbutton: {fileID: 1595546538}
 --- !u!4 &1626633474
 Transform:
@@ -3365,11 +3369,32 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 901244577}
     m_Modifications:
+    - target: {fileID: 260719786170131807, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.50553674
+      objectReference: {fileID: 0}
+    - target: {fileID: 260719786170131807, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 260719786170131807, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 260719786775510765, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
         type: 3}
       propertyPath: SlimeBlock
       value: 
       objectReference: {fileID: 2908901051210412919, guid: a861e4f8e7e546b4ca63e97fbeb0b5fe,
+        type: 3}
+    - target: {fileID: 260719786775510765, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
+        type: 3}
+      propertyPath: nukePrefab
+      value: 
+      objectReference: {fileID: 3247531602955499636, guid: fb40c226f898d0c4e806bfe461526fb2,
         type: 3}
     - target: {fileID: 260719786775510765, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
         type: 3}
@@ -3493,6 +3518,51 @@ PrefabInstance:
       propertyPath: m_Name
       value: CubeMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 260719786784622141, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.43632263
+      objectReference: {fileID: 0}
+    - target: {fileID: 260719786784622141, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5177572
+      objectReference: {fileID: 0}
+    - target: {fileID: 260719786784622141, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.43632263
+      objectReference: {fileID: 0}
+    - target: {fileID: 260719786784622141, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5177572
+      objectReference: {fileID: 0}
+    - target: {fileID: 260719786784622141, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 260719786784622141, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 260719786784622141, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.4000244
+      objectReference: {fileID: 0}
+    - target: {fileID: 260719786784622141, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.2781
+      objectReference: {fileID: 0}
+    - target: {fileID: 260719786784622142, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
+        type: 3}
+      propertyPath: m_Name
+      value: TntCubeButton
+      objectReference: {fileID: 0}
     - target: {fileID: 260719786951481129, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -3507,6 +3577,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlanksButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 260719787170491168, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
+        type: 3}
+      propertyPath: m_Name
+      value: NukeButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 260719787170491174, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Nuke
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a, type: 3}

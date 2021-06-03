@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3247531602955499633}
   m_Layer: 6
   m_Name: Nuke
-  m_TagString: TntCube
+  m_TagString: Nuke
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3247531602955499636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.66735, y: 1.1939267, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -98,8 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cbd354890807a4ba009a82c7189a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 5
+  hp: 0.01
   explosionForce: 100
+  explosionRadius: 20
+  explosionDamageRadius: 10
   rb2D: {fileID: 3247531602955499635}
   cubeMask:
     serializedVersion: 2

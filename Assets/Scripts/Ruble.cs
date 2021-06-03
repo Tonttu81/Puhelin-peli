@@ -11,20 +11,15 @@ public class Ruble : MonoBehaviour
 
     void Update()
     {
-        
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public void OnCollisionEnter2D(Collision2D other)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.gameObject.tag == "Fire")
-        {
-            Destroy(gameObject);
-        }
-        if (other.gameObject.tag == "Circle")
-        {
-            Destroy(gameObject);
-        }
-        if (other.gameObject.tag == "Stonecube")
+        if (collision.collider.tag == "Circle")
         {
             Destroy(gameObject);
         }
