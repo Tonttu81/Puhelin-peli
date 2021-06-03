@@ -34,7 +34,7 @@ public class CameraPanZoom : MonoBehaviour
 
             x += direction.x;
             y += direction.y;
-            x = Mathf.Clamp(x, -12.5f, 17);
+            x = Mathf.Clamp(x, -12f, 17);
             y = Mathf.Clamp(y, -2.5f, 23);
 
             Vector3 clamp = new Vector3(x, y, -754f);

@@ -24,7 +24,7 @@ public class GridScript : MonoBehaviour
     CubeScript[] cubeScripts;
     public GameObject[] cubes;
 
-    public CameraPanZoom CamP;
+    CameraPanZoom CamP;
 
     public GameObject woodCubePrefab;
     public GameObject stoneCubePrefab;
@@ -65,6 +65,8 @@ public class GridScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CamP = GameObject.FindGameObjectWithTag("Camera").GetComponent<CameraPanZoom>();
+
         if (!rotating)
         {
             if (Input.touchCount > 0)
@@ -72,29 +74,32 @@ public class GridScript : MonoBehaviour
                 Touch touch = Input.GetTouch(0);
                 Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
 
-                RaycastHit2D hit = Physics2D.Raycast(touchPos, new Vector2(0f, 0f), 0f, cubeLayer);
-                if (!IsPointerOverUIObject() && hit.collider != null)
+                if (CamP.CamLock)
                 {
-                    if (erasing)
+                    RaycastHit2D hit = Physics2D.Raycast(touchPos, new Vector2(0f, 0f), 0f, cubeLayer);
+                    if (!IsPointerOverUIObject() && hit.collider != null)
                     {
-                        if (hit.collider.tag != "OverlayCube")
+                        if (erasing)
                         {
-                            Destroy(hit.collider.gameObject);
-                        }
-                    }
-                    else
-                    {
-                        if (hit.collider.tag == "OverlayCube")
-                        {
-                            hit.collider.GetComponent<CubeScript>().SpawnCube();
+                            if (hit.collider.tag != "OverlayCube")
+                            {
+                                Destroy(hit.collider.gameObject);
+                            }
                         }
                         else
                         {
-                            hit.collider.GetComponent<CubeScript>().SpawnCube();
-                            Destroy(hit.collider.gameObject);
+                            if (hit.collider.tag == "OverlayCube")
+                            {
+                                hit.collider.GetComponent<CubeScript>().SpawnCube();
+                            }
+                            else
+                            {
+                                hit.collider.GetComponent<CubeScript>().SpawnCube();
+                                Destroy(hit.collider.gameObject);
+                            }
                         }
-                    }
 
+                    }
                 }
             }
         }

@@ -590,7 +590,7 @@ GameObject:
   - component: {fileID: 441790655}
   m_Layer: 0
   m_Name: CM vcam1
-  m_TagString: Untagged
+  m_TagString: Camera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -670,7 +670,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d426fda49477e0c4cae3219d2a3a625f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Grid: {fileID: 1626633472}
   MaxZoom: 1
   MinZoom: 8
   CamLock: 1
@@ -2898,6 +2897,10 @@ MonoBehaviour:
   tntCubePrefab: {fileID: 3247531602955499636, guid: 8a8b9ab1f37e65545a0d9e3162c647c8,
     type: 3}
   WoodenPlanks: {fileID: 0}
+  nukePrefab: {fileID: 3247531602955499636, guid: fb40c226f898d0c4e806bfe461526fb2,
+    type: 3}
+  slimeBlockPrefab: {fileID: 2908901051210412919, guid: a861e4f8e7e546b4ca63e97fbeb0b5fe,
+    type: 3}
   CubeMenu: {fileID: 1984945576}
   eraser: {fileID: 1936232611}
   Clearbutton: {fileID: 1595546538}
@@ -3577,6 +3580,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 260719786775510765, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
         type: 3}
+      propertyPath: nukePrefab
+      value: 
+      objectReference: {fileID: 3247531602955499636, guid: fb40c226f898d0c4e806bfe461526fb2,
+        type: 3}
+    - target: {fileID: 260719786775510765, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
+        type: 3}
       propertyPath: PlanksPrefab
       value: 
       objectReference: {fileID: 2908901051210412919, guid: e2cab143c9cfc804d8fdfe4bd999f076,
@@ -3717,6 +3726,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -1.2000732
       objectReference: {fileID: 0}
+    - target: {fileID: 260719786784622142, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
+        type: 3}
+      propertyPath: m_Name
+      value: TntCubeButton
+      objectReference: {fileID: 0}
     - target: {fileID: 260719786951481129, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -3801,6 +3815,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlanksButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 260719787170491168, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
+        type: 3}
+      propertyPath: m_Name
+      value: NukeButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 260719787170491174, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Nuke
       objectReference: {fileID: 0}
     - target: {fileID: 260719787170491175, guid: 4f2709e1b0bb0964c91c86a0ba99ad0a,
         type: 3}

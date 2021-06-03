@@ -18,6 +18,7 @@ TagManager:
   - Fire
   - Nuke
   - SlimeBlock
+  - Camera
   layers:
   - Default
   - TransparentFX
