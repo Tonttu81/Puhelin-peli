@@ -203,6 +203,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2908901051210412917}
     m_Modifications:
+    - target: {fileID: 7571671191292655687, guid: fb3f95952524ace4e996aeb707da8eea,
+        type: 3}
+      propertyPath: RotationModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571671191292655687, guid: fb3f95952524ace4e996aeb707da8eea,
+        type: 3}
+      propertyPath: CustomDataModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8070032983030276247, guid: fb3f95952524ace4e996aeb707da8eea,
         type: 3}
       propertyPath: m_Name

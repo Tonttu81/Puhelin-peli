@@ -120,8 +120,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 4
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 0.35
+  m_AngularDrag: 0.35
   m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 4405916d2249019478448fbb0180e860, type: 2}
   m_Interpolate: 0
