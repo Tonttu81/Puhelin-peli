@@ -18,10 +18,8 @@ public struct Cube
 public class CubeScript : MonoBehaviour
 {
     Vector3[] dirs = { new Vector2(1, 0), new Vector2(-1, 0), new Vector2(0, 1), new Vector2(0, -1) };
-    //public string cubeType;
-    //public bool occupied;
 
-    public Cube status; // <<<
+    public Cube status;
 
     public float hp;
 
@@ -70,21 +68,19 @@ public class CubeScript : MonoBehaviour
         else 
         {
             RaycastHit2D gridCheck = Physics2D.Raycast(transform.position, new Vector3(0f, 0f, -2f), 20f);
+            
             if (gridCheck.collider.gameObject != null)
             {
-                if (gridCheck.collider.tag != "OverlayCube")
+                if (gridCheck.collider.gameObject.tag != status.cubeType)
                 {
-                    //occupied = true;
-                    //cubeType = gridCheck.collider.tag;
-
-                    status = new Cube(gridCheck.collider.tag, true); 
-                }
-                else if (gridCheck.collider.tag == "OverlayCube")
-                {
-                    //occupied = false;
-                    //cubeType = null;
-
-                    status = new Cube("", false); 
+                    if (gridCheck.collider.tag != "OverlayCube")
+                    {
+                        status = new Cube(gridCheck.collider.tag, true);
+                    }
+                    else if (gridCheck.collider.tag == "OverlayCube")
+                    {
+                        status = new Cube("", false);
+                    }
                 }
             }
         }
@@ -135,6 +131,7 @@ public class CubeScript : MonoBehaviour
     {
         // Aika huonosti tehty mutta toimii kait lkdsalkjdlkj
         
+
         if (collision.tag != "OverlayCube")
         {
             //dadaadad
@@ -147,10 +144,12 @@ public class CubeScript : MonoBehaviour
                         if (AngleCheck(collision.transform))
                         {
                             FixedJoint2D[] existingJoints = GetComponents<FixedJoint2D>(); // Ottaa kaikki objektin jointit
+                            
                             bool[] test = new bool[existingJoints.Length]; // tekee bool arrayn
 
                             if (existingJoints.Length > 0) // tarkistaa onko jointteja yht‰‰n
                             {
+                                
                                 for (int j = 0; j < existingJoints.Length; j++) // jos on jointteja, k‰y ne kaikki l‰pi
                                 {
                                     if (existingJoints[j].connectedBody != collision.GetComponent<Rigidbody2D>()) // ja katsoo, onko jointin connectedbody sen objektin rigidbody, joka tuli triggeriin
@@ -158,9 +157,11 @@ public class CubeScript : MonoBehaviour
                                         test[j] = false; // jos on, laittaa bool arrayn yhdeksi valueksi false
                                     }
                                 }
-
+                                
+                                
                                 if (!ArrayCheck(test)) // k‰y kaikki bool arrayn valuet l‰pi, ja jos kaikki valuet on false niin tekee uuden jointin
                                 {
+                                    
                                     FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
                                     if (gameObject.tag == "StoneCube")
                                     {
@@ -174,11 +175,14 @@ public class CubeScript : MonoBehaviour
                                     }
 
                                     joint.connectedBody = collision.GetComponent<Rigidbody2D>();
+                                    
                                 }
+                            
 
                             }
                             else // jos jointteja ei ole, tekee jointin
                             {
+                                
                                 FixedJoint2D joint = gameObject.AddComponent<FixedJoint2D>();
                                 if (gameObject.tag == "StoneCube")
                                 {
@@ -191,12 +195,14 @@ public class CubeScript : MonoBehaviour
                                     joint.breakTorque = 500f;
                                 }
                                 joint.connectedBody = collision.GetComponent<Rigidbody2D>();
+                                
                             }
                         }
                     }
                 }
             }
 
+            
             Vector2 vel;
 
             if (collision.tag != "Ground" && collision.tag != "Cannon") 
