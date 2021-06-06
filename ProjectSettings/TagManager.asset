@@ -19,6 +19,7 @@ TagManager:
   - Nuke
   - SlimeBlock
   - Camera
+  - WoodPlank
   layers:
   - Default
   - TransparentFX

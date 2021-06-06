@@ -169,8 +169,8 @@ public class CubeScript : MonoBehaviour
                                     }
                                     else
                                     {
-                                        joint.breakForce = 500f;
-                                        joint.breakTorque = 500f;
+                                        joint.breakForce = 1000f;
+                                        joint.breakTorque = 1000f;
                                     }
 
                                     joint.connectedBody = collision.GetComponent<Rigidbody2D>();

@@ -29,7 +29,7 @@ public class GridScript : MonoBehaviour
     public GameObject woodCubePrefab;
     public GameObject stoneCubePrefab;
     public GameObject tntCubePrefab;
-    public GameObject WoodenPlanks;
+    public GameObject woodPlankPrefab;
     public GameObject nukePrefab;
     public GameObject slimeBlockPrefab;
 
@@ -200,6 +200,9 @@ public class GridScript : MonoBehaviour
                         break;
                     case "SlimeBlock":
                         Instantiate(slimeBlockPrefab, new Vector3(cubes[i].transform.position.x, cubes[i].transform.position.y, -1f), Quaternion.identity);
+                        break;
+                    case "WoodPlank":
+                        Instantiate(woodPlankPrefab, new Vector3(cubes[i].transform.position.x, cubes[i].transform.position.y, -1f), Quaternion.identity);
                         break;
                 }
             }

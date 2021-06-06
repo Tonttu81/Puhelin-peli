@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 7020830473406961495}
   m_Layer: 6
   m_Name: Wooden Plank
-  m_TagString: WoodCube
+  m_TagString: WoodPlank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -218,8 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   burning: 0
-  FireEffect: {fileID: 8070032983030276247, guid: fb3f95952524ace4e996aeb707da8eea,
-    type: 3}
+  FireEffect: {fileID: 6492424562673797222}
 --- !u!1001 &3884140825508440305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -255,7 +254,7 @@ PrefabInstance:
     - target: {fileID: 8280573784104989466, guid: fb3f95952524ace4e996aeb707da8eea,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.455
+      value: -0.08
       objectReference: {fileID: 0}
     - target: {fileID: 8280573784104989466, guid: fb3f95952524ace4e996aeb707da8eea,
         type: 3}
@@ -299,6 +298,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb3f95952524ace4e996aeb707da8eea, type: 3}
+--- !u!1 &6492424562673797222 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8070032983030276247, guid: fb3f95952524ace4e996aeb707da8eea,
+    type: 3}
+  m_PrefabInstance: {fileID: 3884140825508440305}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5119955590205447147 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8280573784104989466, guid: fb3f95952524ace4e996aeb707da8eea,
