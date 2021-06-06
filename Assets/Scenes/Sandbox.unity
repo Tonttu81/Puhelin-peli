@@ -2889,7 +2889,6 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   cubes: []
-  CamP: {fileID: 0}
   woodCubePrefab: {fileID: 2908901051210412919, guid: 55d8dec891d2e484e9578b002f277ab4,
     type: 3}
   stoneCubePrefab: {fileID: 7777276428763686872, guid: 3c26ea3d10ca84142a709def5c66ef38,

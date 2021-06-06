@@ -103,11 +103,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 25
   explosionForce: 0
+  explosionRadius: 0
+  explosionDamageRadius: 0
   rb2D: {fileID: -8779016002201030318}
   cubeMask:
     serializedVersion: 2
     m_Bits: 0
-  brokenCube: {fileID: 0}
+  brokenCube: {fileID: 2826712085025605005, guid: afb2e63c5421a384dbf5bc7e6aab3476,
+    type: 3}
   Explosion: {fileID: 0}
 --- !u!50 &-8779016002201030318
 Rigidbody2D:
