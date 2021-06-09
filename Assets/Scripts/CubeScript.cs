@@ -109,6 +109,10 @@ public class CubeScript : MonoBehaviour
                     Instantiate(Explosion, transform.position, transform.rotation);
                     Destroy(gameObject);
                     break;
+                case "WoodPlank":
+                    Instantiate(brokenCube, transform.position, transform.rotation);
+                    Destroy(gameObject);
+                    break;
             }
         }
 

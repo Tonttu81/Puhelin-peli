@@ -1866,4 +1866,5 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
   - Assets/Scenes/Sandbox.unity
-  playerPath: C:/Users/Joni/Desktop/puhelinpeli.apk
+  playerPath: C:/Users/s0vaom00/Desktop/PeliProjekti/Puhelin-peli/Finnish Arson Simulator
+    Early Access.apk

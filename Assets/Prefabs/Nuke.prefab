@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0.01
-  explosionForce: 100
+  explosionForce: 25
   explosionRadius: 20
   explosionDamageRadius: 10
   rb2D: {fileID: 3247531602955499635}

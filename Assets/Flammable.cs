@@ -41,7 +41,7 @@ public class Flammable : MonoBehaviour
             RaycastHit2D[] boxCast = Physics2D.BoxCastAll(transform.position, new Vector2(1.5f, 1.5f), 0f, Vector2.zero);
             for (int i = 0; i < boxCast.Length; i++)
             {
-                if (boxCast[i].collider.tag == "WoodCube" || boxCast[i].collider.tag == "Rubble")
+                if (boxCast[i].collider.tag == "WoodCube" || boxCast[i].collider.tag == "Rubble" || boxCast[i].collider.tag == "WoodPlank")
                 {
                     if (Random.Range(1, 150) == 1)
                     {
